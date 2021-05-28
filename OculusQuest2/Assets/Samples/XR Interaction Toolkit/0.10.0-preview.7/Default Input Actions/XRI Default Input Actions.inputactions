@@ -154,6 +154,30 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Index",
+                    "type": "Value",
+                    "id": "b639f6d4-61dd-48ea-b488-858d232e39cf",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Grip",
+                    "type": "Value",
+                    "id": "932f9e4e-5baf-4d18-b8e8-7aac1597d816",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Thumb",
+                    "type": "Button",
+                    "id": "07754d9d-fbb4-4418-ad55-0cb305c87025",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -332,6 +356,39 @@
                     "action": "Haptic Device",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5fc9d01-af5d-4e63-b0cd-aa5ee599cf91",
+                    "path": "<XRController>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Index",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "94325316-1eda-4ab3-a64e-4ddf3a74d6d7",
+                    "path": "<XRController>/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "138a2b23-4d63-427e-a6dd-47ac52491d43",
+                    "path": "<XRController>/primaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -440,6 +497,30 @@
                     "type": "Value",
                     "id": "6f7cf253-7062-443b-b10f-2be48a33f027",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Index",
+                    "type": "Value",
+                    "id": "b7407023-6d4d-405d-b54e-3dcb772cf603",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Grip",
+                    "type": "Value",
+                    "id": "58fe31bb-4ebb-4c36-b781-ee7ebdd566c9",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Thumb",
+                    "type": "Button",
+                    "id": "558d7623-ac46-46d1-8db7-9dc873a4f584",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -607,6 +688,39 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Haptic Device",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f86a85f4-76c1-416b-ae64-d77ae9c40e74",
+                    "path": "<XRController>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Index",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eff1e367-b587-48aa-a5f2-fff79762524c",
+                    "path": "<XRController>/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f268d1f6-50fd-49ea-b471-e5caa744db44",
+                    "path": "<XRController>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
