@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 4726844815573086}
   - component: {fileID: 95718739528495300}
   m_Layer: 0
-  m_Name: VRTK_BasicHand
+  m_Name: RightHandPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
