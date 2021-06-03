@@ -57,6 +57,12 @@ public class HandPoser : MonoBehaviour
         isUsingPose = true;
 
         //set pose using data from interactable object
+
+        anim.SetLayerWeight(1, 1);
+        anim.SetLayerWeight(2, 1);
+        anim.SetLayerWeight(3, 1);
+        anim.SetLayerWeight(4, 1);
+        anim.SetLayerWeight(5, 1);
     }
 
     // Called when the controller drops an object
