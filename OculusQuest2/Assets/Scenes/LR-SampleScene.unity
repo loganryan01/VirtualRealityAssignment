@@ -467,7 +467,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1589340686}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 146875094}
+  - {fileID: 146875090}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1362,6 +1364,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportationProvider: {fileID: 1867622764}
   continuousMoveProvider: {fileID: 1867622767}
+  snapTurnProvider: {fileID: 1867622763}
+  continuousTurnProvider: {fileID: 1867622768}
+  leftTeleportController: {fileID: 1751312911}
+  rightTeleportController: {fileID: 980906886}
 --- !u!1 &980906886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportController: {fileID: 1751312911}
+  playerPrefs: {fileID: 922054606}
 --- !u!1 &1169809695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,6 +2463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportController: {fileID: 980906886}
+  playerPrefs: {fileID: 922054606}
 --- !u!1 &1589340685
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,6 +3014,8 @@ GameObject:
   - component: {fileID: 1867622765}
   - component: {fileID: 1867622767}
   - component: {fileID: 1867622764}
+  - component: {fileID: 1867622768}
+  - component: {fileID: 1867622763}
   m_Layer: 0
   m_Name: Locomotion System
   m_TagString: Untagged
@@ -3013,6 +3023,45 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1867622763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867622762}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2213c36610e3b1c4bbf886810ed9db12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 1867622765}
+  m_TurnAmount: 45
+  m_DebounceTime: 0.5
+  m_EnableTurnLeftRight: 1
+  m_EnableTurnAround: 1
+  m_LeftHandSnapTurnAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Hand Snap Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 30629ece-e7eb-455a-bdf6-668988ce37c5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  m_RightHandSnapTurnAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Hand Snap Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: ba9d4928-9855-46f7-9e39-410ecf884977
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1867622764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3094,6 +3143,42 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
+--- !u!114 &1867622768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867622762}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 1867622765}
+  m_TurnSpeed: 60
+  m_LeftHandTurnAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Hand Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 456aaf72-cf68-49e5-ab72-987d90d91c6f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  m_RightHandTurnAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Hand Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 77a5c612-046c-4003-83eb-91134aab89b6
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1877677065
 GameObject:
   m_ObjectHideFlags: 0

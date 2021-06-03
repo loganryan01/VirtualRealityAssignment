@@ -5,22 +5,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject teleportController;
+    public PlayerPrefsScript playerPrefs;
+
+    private bool teleporting = false;
     
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        string controls = PlayerPrefs.GetString("Controls");
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (controls == "Teleportation")
+        {
+            teleporting = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interactable"))
+        if (other.CompareTag("Interactable") && teleporting)
         {
             teleportController.SetActive(false);
         }
@@ -28,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Interactable"))
+        if (other.CompareTag("Interactable") && teleporting)
         {
             teleportController.SetActive(true);
         }
