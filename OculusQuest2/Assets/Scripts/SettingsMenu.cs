@@ -19,11 +19,49 @@ public class SettingsMenu : MonoBehaviour
     public ActionBasedSnapTurnProvider snapTurnProvider;
     public Toggle snapTurnToggle;
 
+    // Continuous Controls
+    public ActionBasedContinuousTurnProvider continuousTurnProvider;
+    public Toggle continuousTurnToggle;
+
     // Main Menu Object
     public GameObject mainMenuObject;
     public AudioMixer mixer;
-    
-    
+
+    public void Start()
+    {
+        string controls = PlayerPrefs.GetString("Controls");
+        string rotationControls = PlayerPrefs.GetString("Rotation");
+
+        if (controls == "Teleportation")
+        {
+            teleportationProvider.enabled = true;
+            continuousMoveProvider.enabled = false;
+
+            teleportationToggle.isOn = true;
+        }
+        else
+        {
+            teleportationProvider.enabled = false;
+            continuousMoveProvider.enabled = true;
+
+            continuousToggle.isOn = true;
+        }
+
+        if (rotationControls == "Snap Turn")
+        {
+            snapTurnProvider.enabled = true;
+            continuousTurnProvider.enabled = false;
+
+            snapTurnToggle.isOn = true;
+        }
+        else
+        {
+            snapTurnProvider.enabled = false;
+            continuousTurnProvider.enabled = true;
+
+            continuousTurnToggle.isOn = true;
+        }
+    }
 
     public void EnableTeleportation()
     {
@@ -60,6 +98,9 @@ public class SettingsMenu : MonoBehaviour
         else if (!teleportationToggle.isOn && !continuousToggle.isOn)
         {
             continuousToggle.isOn = true;
+
+            teleportationProvider.enabled = false;
+            continuousMoveProvider.enabled = true;
         }
         else if (teleportationToggle.isOn && continuousToggle.isOn)
         {
@@ -70,6 +111,56 @@ public class SettingsMenu : MonoBehaviour
         }
 
         PlayerPrefs.SetString("Controls", "Continuous");
+    }
+
+    public void EnableSnapTurn()
+    {
+        if (snapTurnToggle.isOn && !continuousTurnToggle.isOn)
+        {
+            snapTurnProvider.enabled = true;
+            continuousTurnProvider.enabled = false;
+        }
+        else if (!snapTurnToggle.isOn && !continuousTurnToggle.isOn)
+        {
+            snapTurnToggle.isOn = true;
+
+            snapTurnProvider.enabled = true;
+            continuousTurnProvider.enabled = false;
+        }
+        else if (snapTurnToggle.isOn && continuousTurnToggle.isOn)
+        {
+            continuousTurnToggle.isOn = false;
+
+            snapTurnProvider.enabled = true;
+            continuousTurnProvider.enabled = false;
+        }
+
+        PlayerPrefs.SetString("Rotation", "Snap Turn");
+    }
+
+    public void EnableContinuousTurn()
+    {
+        if (!snapTurnToggle.isOn && continuousTurnToggle.isOn)
+        {
+            snapTurnProvider.enabled = false;
+            continuousTurnProvider.enabled = true;
+        }
+        else if (!snapTurnToggle.isOn && !continuousTurnToggle.isOn)
+        {
+            continuousTurnToggle.isOn = true;
+
+            snapTurnProvider.enabled = false;
+            continuousTurnProvider.enabled = true;
+        }
+        else if (snapTurnToggle.isOn && continuousTurnToggle.isOn)
+        {
+            snapTurnToggle.isOn = false;
+
+            snapTurnProvider.enabled = false;
+            continuousTurnProvider.enabled = true;
+        }
+
+        PlayerPrefs.SetString("Rotation", "Continuous");
     }
 
     public void SetLevel(float sliderValue)
