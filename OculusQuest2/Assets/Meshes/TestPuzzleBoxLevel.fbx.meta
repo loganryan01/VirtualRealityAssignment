@@ -3,7 +3,72 @@ guid: 61ceac94169f7b44199233bebec2817b
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmuletGlassCabinet
+    second: {fileID: 2100000, guid: 0d5283adec366324cb20acf854578b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BallMachine
+    second: {fileID: 2100000, guid: 6db6e937eb03e8240938e2bbb7a903ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bookshelf
+    second: {fileID: 2100000, guid: 2df94d0ffe1ac074ba22071804bc9c55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CarriageDoor
+    second: {fileID: 2100000, guid: e0f710ecf9232b04e8d7e029c98b900e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrandfatherClock
+    second: {fileID: 2100000, guid: b0971510b2badb348bb3858c49389adc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Painting
+    second: {fileID: 2100000, guid: dd2bb9bb12ecc834b887a8be9c6482b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PaintingCompartment
+    second: {fileID: 2100000, guid: 3543fd60f0364574b9bd1178c876c2b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PhysicsBallPuzzle
+    second: {fileID: 2100000, guid: f9b45c658ff065b4eb39f1c72ff07f56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PuzzleBox
+    second: {fileID: 2100000, guid: 70f27395b8d92e448bbcdd91d904dae3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PuzzleBoxTable
+    second: {fileID: 2100000, guid: 5ef0a824beb691b49bf237f1ca1b484f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Room
+    second: {fileID: 2100000, guid: c660a892ccd68f84aa1ab9d6f91d4652, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table
+    second: {fileID: 2100000, guid: 1345129f43737e04e83ad0d5ea5c550c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WorldGlobe
+    second: {fileID: 2100000, guid: 65fb759da2b0ca84eb5382e2f614d7a7, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
