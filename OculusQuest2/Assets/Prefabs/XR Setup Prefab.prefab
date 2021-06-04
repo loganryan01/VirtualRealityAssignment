@@ -1070,6 +1070,8 @@ MonoBehaviour:
   continuousMoveProvider: {fileID: 5957393555666824615}
   snapTurnProvider: {fileID: 5957393555666824600}
   continuousTurnProvider: {fileID: 5957393555666824612}
+  leftTeleportController: {fileID: 0}
+  rightTeleportController: {fileID: 0}
 --- !u!1 &5957393556765208380
 GameObject:
   m_ObjectHideFlags: 0
