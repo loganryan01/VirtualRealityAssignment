@@ -16,6 +16,9 @@ public class RailSystem : MonoBehaviour
 
         public Vector3 curvePoint;
 
+        public Vector3 startRotation;
+        public Vector3 endRotation;
+
 
         [HideInInspector]
         public float sqrLength;
@@ -70,11 +73,14 @@ public class RailSystem : MonoBehaviour
             allignedPos = GetPointOnCurve(distanceAlong, rail.start, rail.curvePoint, rail.end);
         }
 
+        Quaternion currentRot = Quaternion.Lerp(Quaternion.Euler(rail.startRotation), Quaternion.Euler(rail.endRotation), distanceAlong);
+
 
         // We are past the start of the rail
         if (distanceAlong <= 0.001f)
         {
             allignedPos = rail.start;
+            currentRot = Quaternion.Euler(rail.startRotation);
 
             if (currentRail > 0)
             {
@@ -90,6 +96,7 @@ public class RailSystem : MonoBehaviour
         else if (distanceAlong >= 0.999f)
         {
             allignedPos = rail.end;
+            currentRot = Quaternion.Euler(rail.endRotation);
 
             if (currentRail < rails.Length - 1)
             {
@@ -104,6 +111,7 @@ public class RailSystem : MonoBehaviour
         
         // Keep the object on the rail
         transform.position = allignedPos;
+        transform.rotation = currentRot;
 
 
         // Set values for the editor
