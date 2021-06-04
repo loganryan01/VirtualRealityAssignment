@@ -19,7 +19,7 @@ public class TeleportActivate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //teleportCancelReference.action.performed += TeleportModeActivate;
+        //teleportCancelReference.action.started += TeleportModeActivate;
         //teleportCancelReference.action.canceled += TeleportModeCancel;
     }
 
@@ -27,15 +27,13 @@ public class TeleportActivate : MonoBehaviour
     void Update()
     {
         // If using teleportation and the action has been started
-        if ( 
-            (teleportCancelReference.action.phase == InputActionPhase.Performed || 
-            teleportCancelReference.action.phase == InputActionPhase.Started))
+        if (teleportCancelReference.action.phase == InputActionPhase.Started)
         {
             onTeleportActivate.Invoke();
         }
         else
         {
-            Invoke("DelayTeleportation ", .1f);
+            Invoke("DelayTeleportationDeactivate", .1f);
         }
     }
 
@@ -47,9 +45,9 @@ public class TeleportActivate : MonoBehaviour
     private void TeleportModeActivate(InputAction.CallbackContext obj) => onTeleportActivate.Invoke();
 
     // This will delay the call of the DelayTeleportation function for 0.1 of a second
-    private void TeleportModeCancel(InputAction.CallbackContext obj) => Invoke("DelayTeleportation ", .1f);
+    private void TeleportModeCancel(InputAction.CallbackContext obj) => Invoke("DelayTeleportationDeactivate", .1f);
 
     // This will let us call a series of events created in the onTeleportCancel events in the inspector
-    private void DelayTeleportation() => onTeleportCancel.Invoke();
+    private void DelayTeleportationDeactivate() => onTeleportCancel.Invoke();
 
 }
