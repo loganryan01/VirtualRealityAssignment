@@ -50,7 +50,10 @@ public class RailEditor : Editor
                 SerializedProperty element = rails.GetArrayElementAtIndex(i);
                 EditorGUILayout.PropertyField(element.FindPropertyRelative("start"));
                 EditorGUILayout.PropertyField(element.FindPropertyRelative("end"));
-
+                EditorGUILayout.Space();
+                EditorGUILayout.PropertyField(element.FindPropertyRelative("startRotation"));
+                EditorGUILayout.PropertyField(element.FindPropertyRelative("endRotation"));
+                EditorGUILayout.Space();
                 SerializedProperty straight = element.FindPropertyRelative("isStraight");
                 EditorGUILayout.PropertyField(straight);
                 // Only display curve point if using a curved rail
