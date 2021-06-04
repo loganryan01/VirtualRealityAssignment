@@ -832,7 +832,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -2.7749729e-24, z: 2.09e-43, w: 9e-44}
+  m_BoundingSphereOverride: {x: 0, y: 8e-45, z: 2.3476e-41, w: 1.04e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -850,6 +850,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!1 &289928387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1502260838919391370, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
+  m_PrefabInstance: {fileID: 2087591072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &289928389
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289928387}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &289928392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289928387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5937a5349f0ba3489a3de3f06b1e099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfPoints: 12
+  rotationAxis: {x: 1, y: 0, z: 0}
+  correctionStrength: 5
+  smallHand: {fileID: 1319179672}
+  puzzleMinute: 105
+  puzzleHour: 11
+  puzzleTimmer: 3
+  puzzleThreshold: 1
+  onPuzzleComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  lastRot: 0
+  smallHandRot: 0
 --- !u!1 &302591260
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +1022,158 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &432154309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5968716816896153850, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
+  m_PrefabInstance: {fileID: 2087591072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &432154311
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432154309}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &432154312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432154309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f970902ee54d7c64fb0d0baf1d74a978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rails:
+  - start: {x: 1.8122152, y: 1.4899948, z: 1.0986526}
+    end: {x: 1.8122152, y: 1.47, z: 0.995}
+    isStraight: 0
+    curvePoint: {x: 1.8122152, y: 1.4899948, z: 1}
+    startRotation: {x: -270, y: 0, z: 0}
+    endRotation: {x: -280, y: 0, z: 0}
+    sqrLength: 0
+  currentRail: 0
+  onStartOfRail:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1557569742}
+        m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
+        m_MethodName: OnBookReturned
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEndOfRail:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1557569742}
+        m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
+        m_MethodName: OnBookPulled
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  totalDist: 0
+  currentDist: 0
+  color: {r: 0.735849, g: 0, b: 0, a: 1}
+--- !u!114 &432154314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432154309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 135554405}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CustomReticle: {fileID: 0}
+  m_AttachTransform: {fileID: 0}
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 1
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 5
+  m_TightenPosition: 0.5
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 5
+  m_TightenRotation: 0.5
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_GravityOnDetach: 0
+  m_RetainTransformParent: 1
 --- !u!1 &554593076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +1267,158 @@ Transform:
   m_Father: {fileID: 1556092173}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &586243702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3713668492283445276, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
+  m_PrefabInstance: {fileID: 2087591072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &586243704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586243702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f970902ee54d7c64fb0d0baf1d74a978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rails:
+  - start: {x: 1.2256372, y: 1.4899948, z: 1.0986526}
+    end: {x: 1.2256372, y: 1.47, z: 0.995}
+    isStraight: 0
+    curvePoint: {x: 1.2256372, y: 1.4899948, z: 1}
+    startRotation: {x: -270, y: 0, z: 0}
+    endRotation: {x: -280, y: 0, z: 0}
+    sqrLength: 0
+  currentRail: 0
+  onStartOfRail:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1557569742}
+        m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
+        m_MethodName: OnBookReturned
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEndOfRail:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1557569742}
+        m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
+        m_MethodName: OnBookPulled
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  totalDist: 0
+  currentDist: 0
+  color: {r: 0, g: 0.3962264, b: 0.026838189, a: 1}
+--- !u!54 &586243705
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586243702}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &586243708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586243702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 135554405}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CustomReticle: {fileID: 0}
+  m_AttachTransform: {fileID: 0}
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 1
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 5
+  m_TightenPosition: 0.5
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 5
+  m_TightenRotation: 0.5
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_GravityOnDetach: 0
+  m_RetainTransformParent: 1
 --- !u!1 &607889173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1517,158 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &770062777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4965763790012754064, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
+  m_PrefabInstance: {fileID: 2087591072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &770062779
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770062777}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &770062780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770062777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f970902ee54d7c64fb0d0baf1d74a978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rails:
+  - start: {x: 2.3934753, y: 1.4899948, z: 1.0986526}
+    end: {x: 2.3934753, y: 1.47, z: 0.995}
+    isStraight: 0
+    curvePoint: {x: 2.393475, y: 1.4899948, z: 1}
+    startRotation: {x: -270, y: 0, z: 0}
+    endRotation: {x: -280, y: 0, z: 0}
+    sqrLength: 0
+  currentRail: 0
+  onStartOfRail:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1557569742}
+        m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
+        m_MethodName: OnBookReturned
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEndOfRail:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1557569742}
+        m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
+        m_MethodName: OnBookPulled
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  totalDist: 0
+  currentDist: 0
+  color: {r: 0, g: 0.0779344, b: 0.6226415, a: 1}
+--- !u!114 &770062782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770062777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 135554405}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CustomReticle: {fileID: 0}
+  m_AttachTransform: {fileID: 0}
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 1
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 5
+  m_TightenPosition: 0.5
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 5
+  m_TightenRotation: 0.5
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_GravityOnDetach: 0
+  m_RetainTransformParent: 1
 --- !u!1 &1061049741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1879,11 @@ MonoBehaviour:
       m_SingletonActionBindings: []
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!4 &1319179672 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2660887270441530369, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
+  m_PrefabInstance: {fileID: 2087591072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1342402214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +2474,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.02e-43, y: 2.73e-43, z: 0, w: 4.8204774e-10}
+  m_BoundingSphereOverride: {x: 5.44e-43, y: 9.4e-44, z: 0, w: 53.65976}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2415,6 +2922,27 @@ MonoBehaviour:
       m_SingletonActionBindings: []
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!1 &1557569737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5226264596885799482, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
+  m_PrefabInstance: {fileID: 2087591072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557569742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557569737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8317256e7bc49fe4da0bc5a7b274b421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleBookOrder: 000000000100000002000000
+  onPuzzleComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1577775010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,7 +3047,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0.009687513, z: 1.54e-43, w: 9e-44}
+  m_BoundingSphereOverride: {x: 5.44e-43, y: 9.4e-44, z: 0, w: 21.101974}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

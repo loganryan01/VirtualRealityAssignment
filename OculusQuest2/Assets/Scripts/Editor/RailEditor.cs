@@ -8,21 +8,27 @@ public class RailEditor : Editor
 {
     SerializedProperty rails;
     // Used for foldouts
-    bool railsFoldout;
+    bool railsFoldout = true;
     private bool[] showElement = new bool[100];
 
     SerializedProperty onStartOfRail;
     SerializedProperty onEndOfRail;
     SerializedProperty color;
 
-
-
+    
+    
     void OnEnable()
     {
         rails = serializedObject.FindProperty("rails");
         onStartOfRail = serializedObject.FindProperty("onStartOfRail");
         onEndOfRail = serializedObject.FindProperty("onEndOfRail");
         color = serializedObject.FindProperty("color");
+
+        // Set default values
+        for (int i = 0; i < showElement.Length; i++)
+        {
+            showElement[i] = true;
+        }
     }
 
     public override void OnInspectorGUI()
