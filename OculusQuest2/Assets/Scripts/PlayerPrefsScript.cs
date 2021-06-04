@@ -10,6 +10,9 @@ public class PlayerPrefsScript : MonoBehaviour
     public ActionBasedSnapTurnProvider snapTurnProvider;
     public ActionBasedContinuousTurnProvider continuousTurnProvider;
 
+    public GameObject leftTeleportController;
+    public GameObject rightTeleportController;
+
     public static bool teleportationMovement = false;
     public static bool continuousMovement = false;
 
@@ -30,6 +33,9 @@ public class PlayerPrefsScript : MonoBehaviour
         {
             teleportationProvider.enabled = false;
             continuousMoveProvider.enabled = true;
+
+            leftTeleportController.SetActive(false);
+            rightTeleportController.SetActive(false);
 
             continuousMovement = true;
         }
