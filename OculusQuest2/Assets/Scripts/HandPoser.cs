@@ -24,6 +24,8 @@ public class HandPoser : MonoBehaviour
     private bool isUsingPose = false;
     private bool firstUpdate = true;
 
+    private bool isUsingTeleport;
+
 
     void Start()
     {
@@ -35,11 +37,13 @@ public class HandPoser : MonoBehaviour
 
     void Update()
     {
-        // Get the animator on the first update because the hand prefab hasnt been created yet in start
+        // Some things need to be done in the first update call because of race conditions
         if (firstUpdate)
         {
             firstUpdate = false;
             anim = GetComponentInChildren<Animator>();
+            // Get movement control type from player prefs script
+            isUsingTeleport = PlayerPrefsScript.teleportationMovement;
         }
 
         // The hand is posed so dont use animations
@@ -60,7 +64,7 @@ public class HandPoser : MonoBehaviour
 
 
         // If using teleportation and the action has been started
-        if (teleportCancelReference.action.phase == InputActionPhase.Started)
+        if (isUsingTeleport && teleportCancelReference.action.phase == InputActionPhase.Started)
         {
             onTeleportActivate.Invoke();
         }

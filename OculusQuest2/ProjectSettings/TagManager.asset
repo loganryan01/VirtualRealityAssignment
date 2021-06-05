@@ -6,8 +6,6 @@ TagManager:
   tags:
   - lockObj
   - lockArea
-  - Interactable
-  - Goal
   layers:
   - Default
   - TransparentFX
@@ -18,8 +16,8 @@ TagManager:
   - 
   - 
   - Ground
-  - BallBox
-  - Ball
+  - 
+  - 
   - 
   - 
   - 
