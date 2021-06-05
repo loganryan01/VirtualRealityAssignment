@@ -10,13 +10,16 @@ public class PlayerPrefsScript : MonoBehaviour
     public ActionBasedSnapTurnProvider snapTurnProvider;
     public ActionBasedContinuousTurnProvider continuousTurnProvider;
 
+    public GameObject leftTeleportController;
+    public GameObject rightTeleportController;
+
     public static bool teleportationMovement = false;
     public static bool continuousMovement = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        string controls = "Teleportation";
+        string controls = PlayerPrefs.GetString("Controls");
         string rotationControls = PlayerPrefs.GetString("Rotation");
 
         if (controls == "Teleportation")
@@ -30,6 +33,9 @@ public class PlayerPrefsScript : MonoBehaviour
         {
             teleportationProvider.enabled = false;
             continuousMoveProvider.enabled = true;
+
+            leftTeleportController.SetActive(false);
+            rightTeleportController.SetActive(false);
 
             continuousMovement = true;
         }
