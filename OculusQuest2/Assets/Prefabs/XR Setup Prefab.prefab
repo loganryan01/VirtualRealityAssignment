@@ -497,7 +497,6 @@ MonoBehaviour:
   minDistance: 0.001
   rotationStrength: 30
   minRotationDiff: 10
-  rb: {fileID: 0}
 --- !u!1 &5151976592947526615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1279,8 @@ MonoBehaviour:
   continuousMoveProvider: {fileID: 5957393555666824615}
   snapTurnProvider: {fileID: 5957393555666824600}
   continuousTurnProvider: {fileID: 5957393555666824612}
+  leftTeleportController: {fileID: 0}
+  rightTeleportController: {fileID: 0}
 --- !u!1 &5957393556765208380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1385,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  indexEndCollider: {fileID: 2466020647535033887}
+  indexFingerCollider: {fileID: 6153208980901455965}
 --- !u!1 &5957393556771491860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,6 +1491,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  indexEndCollider: {fileID: 0}
+  indexFingerCollider: {fileID: 0}
 --- !u!1 &5957393556773711395
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2382,16 @@ PrefabInstance:
 --- !u!4 &2578556060212739373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4726844815573086, guid: afec65f27dcd2c74cba31fc61eea61e6, type: 3}
+  m_PrefabInstance: {fileID: 2582836485519392115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &2466020647535033887 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 135394616707351404, guid: afec65f27dcd2c74cba31fc61eea61e6, type: 3}
+  m_PrefabInstance: {fileID: 2582836485519392115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &6153208980901455965 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 8555857354821915950, guid: afec65f27dcd2c74cba31fc61eea61e6, type: 3}
   m_PrefabInstance: {fileID: 2582836485519392115}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2578788224830016739 stripped

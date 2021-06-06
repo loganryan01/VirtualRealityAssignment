@@ -10,7 +10,7 @@ public class HandPoser : MonoBehaviour
     public InputActionReference indexInputReference;
     public InputActionReference thumbInputReference;
     public InputActionReference gripInputReference;
-
+    [Space]
     // Access the GameObject that contains the teleport controller script.
     public GameObject teleportController;
     // Reference to the Input Action Reference that contains the button mapping data for activation.
@@ -18,6 +18,9 @@ public class HandPoser : MonoBehaviour
 
     public UnityEvent onTeleportActivate;
     public UnityEvent onTeleportCancel;
+    [Space]
+    public Collider indexEndCollider;
+    public Collider indexFingerCollider;
 
 
     private Animator anim;
@@ -63,6 +66,11 @@ public class HandPoser : MonoBehaviour
         if (teleportCancelReference.action.phase == InputActionPhase.Started)
         {
             onTeleportActivate.Invoke();
+            if (indexEndCollider != null && indexFingerCollider != null)
+            {
+                indexEndCollider.enabled = false;
+                indexFingerCollider.enabled = true;
+            }
         }
         else
         {
@@ -94,5 +102,13 @@ public class HandPoser : MonoBehaviour
     }
 
 
-    private void DelayTeleportationDeactivate() => onTeleportCancel.Invoke();
+    private void DelayTeleportationDeactivate()
+    {
+        onTeleportCancel.Invoke();
+        if (indexEndCollider != null && indexFingerCollider != null)
+		{
+            indexEndCollider.enabled = true;
+            indexFingerCollider.enabled = false;
+        }
+    }
 }
