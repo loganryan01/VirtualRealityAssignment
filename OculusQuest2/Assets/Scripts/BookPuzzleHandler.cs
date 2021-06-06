@@ -19,6 +19,12 @@ public class BookPuzzleHandler : MonoBehaviour
         // Add book to current order
         for (int i = 0; i < currentOrder.Length; i++)
         {
+            // If the book has already been added, ignore it
+            if (currentOrder[i] == index)
+			{
+                return;
+			}
+
             // If the index in unassigned, use it
             if (currentOrder[i] == -1)
             {
