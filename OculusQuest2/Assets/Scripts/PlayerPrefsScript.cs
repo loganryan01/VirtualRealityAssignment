@@ -19,7 +19,7 @@ public class PlayerPrefsScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string controls = "None";
+        string controls = PlayerPrefs.GetString("Controls");
         string rotationControls = PlayerPrefs.GetString("Rotation");
 
         if (controls == "Teleportation")
