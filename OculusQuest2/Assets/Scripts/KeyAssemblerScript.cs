@@ -22,6 +22,10 @@ public class KeyAssemblerScript : MonoBehaviour
 
     //temp. how much to move each block
     public float moveDistance;
+    //how long the animation is
+    public float moveTime = 1;
+    //effect used when complete key is created
+    public ParticleSystem effect;
 
 
     private SnapRotate leftRotate;
@@ -90,29 +94,38 @@ public class KeyAssemblerScript : MonoBehaviour
         Vector3 rightStart = rightBlock.transform.position;
 
         float t = 0;
-        while (t < 1)
+        while (t < moveTime)
 		{
             // Move the blocks together over time
-            leftBlock.transform.position = leftStart + new Vector3(0, 0, moveDistance * (t / 1));
-            rightBlock.transform.position = rightStart - new Vector3(0, 0, moveDistance * (t / 1));
+            leftBlock.transform.position = leftStart + new Vector3(0, 0, moveDistance * (t / moveTime));
+            rightBlock.transform.position = rightStart - new Vector3(0, 0, moveDistance * (t / moveTime));
             
             t += Time.deltaTime;
             yield return null;
 		}
 
 
-        // Destroy the key piece prefabs
-        Destroy(leftBlock.GetComponentInChildren<XRSocketInteractor>().selectTarget.gameObject);
-        Destroy(rightBlock.GetComponentInChildren<XRSocketInteractor>().selectTarget.gameObject);
+        // Disable the key pieces. They cant be destroied because other scripts still have refrences to them
+        leftBlock.GetComponentInChildren<XRSocketInteractor>().selectTarget.gameObject.SetActive(false);
+        rightBlock.GetComponentInChildren<XRSocketInteractor>().selectTarget.gameObject.SetActive(false);
         // Disable the socket interactors
         leftBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
         rightBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
-        
-        //instantiate complete key in a socket between the blocks
+
+        // Play particle effect
+        effect.Play();
+
+        // Instantiate the complete key in a socket between the blocks
         completeKeySocket.socketActive = true;
         Instantiate(completeKeyPrefab, completeKeySocket.transform.position, completeKeySocket.transform.rotation);
     }
 
+    // Called when the complete key is removed from its socket
+    public void OnCompleteKeyTaken()
+    {
+        // Disable the socket so the key cant be put back into it
+        completeKeySocket.socketActive = false;
+    }
 
 
     void Update()
@@ -132,11 +145,5 @@ public class KeyAssemblerScript : MonoBehaviour
                 StartCoroutine(OnBlocksRotated());
             }
 		}
-	}
-
-
-    public void OnCompleteKeyTaken()
-	{
-        completeKeySocket.socketActive = false;
 	}
 }
