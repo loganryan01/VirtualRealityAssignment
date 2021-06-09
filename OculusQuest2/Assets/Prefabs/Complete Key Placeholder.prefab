@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3611807746939535822}
   - component: {fileID: 3611807746939535821}
   - component: {fileID: 3611807746939535820}
+  - component: {fileID: -6116766825176745944}
   m_Layer: 0
   m_Name: Complete Key Placeholder
   m_TagString: Untagged
@@ -221,3 +222,24 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 1
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &-6116766825176745944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3611807746939535667}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f9d8beaecff0a44b114c557d92d116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAxis: 0
+  startAngle: 0
+  endAngle: 90
+  onStartAngle:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndAngle:
+    m_PersistentCalls:
+      m_Calls: []
