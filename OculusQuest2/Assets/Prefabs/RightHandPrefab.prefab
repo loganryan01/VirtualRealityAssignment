@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4319449009256914}
   - component: {fileID: 135394616707351404}
+  - component: {fileID: 8555857354821915950}
   m_Layer: 0
   m_Name: Index
   m_TagString: Untagged
@@ -70,11 +71,25 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087066476825678}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.015
   m_Center: {x: 0, y: -0.015, z: 0}
+--- !u!136 &8555857354821915950
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087066476825678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.015
+  m_Height: 0.1
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.015, z: -0.035}
 --- !u!1 &1126228594434696
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138247430904094}
   m_LocalRotation: {x: -0.67010695, y: 0.032710265, z: -0.030831506, w: 0.7409023}
-  m_LocalPosition: {x: 0, y: 0.00008948826, z: 0.00005098728}
+  m_LocalPosition: {x: 0.000012, y: 0.0002, z: 0.00025}
   m_LocalScale: {x: 0.01, y: 0.010000696, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4731714980939906}
@@ -190,7 +205,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200292382491122}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.015
@@ -234,7 +249,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237819446708720}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.015
@@ -557,7 +572,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398406636836058}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.015
@@ -1024,7 +1039,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671039121602088}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.015
@@ -1147,7 +1162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727485427504892}
   m_LocalRotation: {x: 0.050610885, y: -0.03240509, z: 0.0062136524, w: 0.9981733}
-  m_LocalPosition: {x: -2.1973392e-11, y: 0.00028243498, z: 2.3283064e-12}
+  m_LocalPosition: {x: 0, y: 0.00028243498, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4220431479120062}
@@ -1366,6 +1381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4731714980939906}
+  - component: {fileID: 4996020951493924985}
   m_Layer: 0
   m_Name: VRTK_Hand_Bone_Palm
   m_TagString: Untagged
@@ -1394,6 +1410,19 @@ Transform:
   m_Father: {fileID: 4062987850226086}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4996020951493924985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869784272461842}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0008, y: 0.001, z: 0.0004}
+  m_Center: {x: 0, y: 0.0002, z: 0}
 --- !u!1 &1937369400946318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1432,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4967745397010832}
-  - component: {fileID: 54584660101132624}
   m_Layer: 0
   m_Name: GrabAttachPoint
   m_TagString: Untagged
@@ -1425,22 +1453,6 @@ Transform:
   m_Father: {fileID: 4731714980939906}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54584660101132624
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937369400946318}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1957854551773514
 GameObject:
   m_ObjectHideFlags: 0

@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_CustomReticle: {fileID: 0}
+  m_CustomReticle: {fileID: 1464817429111846000, guid: 1858408184e196a47a472221e1d09114, type: 3}
   m_TeleportationProvider: {fileID: 0}
   m_MatchOrientation: 0
   m_TeleportTrigger: 2
@@ -283,7 +283,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &164406871
 MeshRenderer:
@@ -292,7 +292,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164406868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -342,7 +342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164406868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.678, y: -0.0149998665, z: -0.823}
+  m_LocalPosition: {x: 1.678, y: 0.00001, z: -0.813}
   m_LocalScale: {x: 0.66284883, y: 1, z: 0.43425664}
   m_Children: []
   m_Father: {fileID: 0}
@@ -422,7 +422,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.13e-43, y: 9.4e-44, z: 0, w: -3.5018253}
+  m_BoundingSphereOverride: {x: 0, y: 1.86205e-40, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -650,7 +650,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 110
   m_CollisionDetection: 0
 --- !u!114 &289928392
 MonoBehaviour:
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2094,7 +2094,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.13e-43, y: 9.4e-44, z: 0, w: -9.148766}
+  m_BoundingSphereOverride: {x: 0, y: 1.54e-43, z: 2.0553e-41, w: 1.04e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2207,7 +2207,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.13e-43, y: 9.4e-44, z: 0, w: -9.148766}
+  m_BoundingSphereOverride: {x: 0, y: -3.7990074, z: 7.13e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -7708,7 +7708,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []

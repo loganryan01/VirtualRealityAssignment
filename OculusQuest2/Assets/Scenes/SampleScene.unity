@@ -233,6 +233,9 @@ MonoBehaviour:
   onUnlocked:
     m_PersistentCalls:
       m_Calls: []
+  caseDoor: {fileID: 0}
+  time: 0
+  angle: 0
 --- !u!1 &164406868
 GameObject:
   m_ObjectHideFlags: 0
@@ -7436,7 +7439,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -7572,7 +7575,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.13e-43, y: 1.84e-43, z: 0, w: -9.86245}
+  m_BoundingSphereOverride: {x: 0, y: 1.86171e-40, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
