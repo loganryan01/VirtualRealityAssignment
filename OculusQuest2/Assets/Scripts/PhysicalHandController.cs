@@ -77,12 +77,13 @@ public class PhysicalHandController : MonoBehaviour
     // Called when this hand grabs an object
     public void OnGrab(XRBaseInteractable interactable)
 	{
-        interactable.gameObject.layer = LayerMask.NameToLayer("Grabbed Object");
+        if (interactable != null)
+            interactable.gameObject.layer = LayerMask.NameToLayer("Grabbed Object");
 	}
-
     // Called when this hand drops an object
     public void OnDrop(XRBaseInteractable interactable)
 	{
-        interactable.gameObject.layer = LayerMask.NameToLayer("Default");
+        if (interactable != null)
+            interactable.gameObject.layer = LayerMask.NameToLayer("Default");
     }
 }
