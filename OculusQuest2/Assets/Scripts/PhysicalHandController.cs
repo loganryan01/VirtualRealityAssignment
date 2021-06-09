@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PhysicalHandController : MonoBehaviour
@@ -23,6 +24,10 @@ public class PhysicalHandController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         // Set the center of mass so torque works as expected
         rb.centerOfMass = transform.localPosition;
+
+        // Add listener for when an object is grabbed and dropped
+        GetComponentInChildren<XRDirectInteractor>().onSelectEntered.AddListener(OnGrab);
+        GetComponentInChildren<XRDirectInteractor>().onSelectExited.AddListener(OnDrop);
     }
 
     void FixedUpdate()
@@ -67,5 +72,17 @@ public class PhysicalHandController : MonoBehaviour
             // Apply torque
             rb.AddTorque(torque);
         }
+    }
+
+    // Called when this hand grabs an object
+    public void OnGrab(XRBaseInteractable interactable)
+	{
+        interactable.gameObject.layer = LayerMask.NameToLayer("Grabbed Object");
+	}
+
+    // Called when this hand drops an object
+    public void OnDrop(XRBaseInteractable interactable)
+	{
+        interactable.gameObject.layer = LayerMask.NameToLayer("Default");
     }
 }
