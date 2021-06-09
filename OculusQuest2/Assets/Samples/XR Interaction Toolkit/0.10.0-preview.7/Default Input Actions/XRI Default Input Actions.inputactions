@@ -360,7 +360,7 @@
                 {
                     "name": "",
                     "id": "e5fc9d01-af5d-4e63-b0cd-aa5ee599cf91",
-                    "path": "<XRController>/trigger",
+                    "path": "<XRController>{LeftHand}/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -371,7 +371,7 @@
                 {
                     "name": "",
                     "id": "94325316-1eda-4ab3-a64e-4ddf3a74d6d7",
-                    "path": "<XRController>/grip",
+                    "path": "<XRController>{LeftHand}/grip",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -382,7 +382,7 @@
                 {
                     "name": "",
                     "id": "138a2b23-4d63-427e-a6dd-47ac52491d43",
-                    "path": "<XRController>/primaryTouched",
+                    "path": "<XRController>{LeftHand}/primaryTouch",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -694,7 +694,7 @@
                 {
                     "name": "",
                     "id": "f86a85f4-76c1-416b-ae64-d77ae9c40e74",
-                    "path": "<XRController>/trigger",
+                    "path": "<XRController>{RightHand}/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -705,7 +705,7 @@
                 {
                     "name": "",
                     "id": "eff1e367-b587-48aa-a5f2-fff79762524c",
-                    "path": "<XRController>/grip",
+                    "path": "<XRController>{RightHand}/grip",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -716,7 +716,7 @@
                 {
                     "name": "",
                     "id": "f268d1f6-50fd-49ea-b471-e5caa744db44",
-                    "path": "<XRController>/primaryTouch",
+                    "path": "<XRController>{RightHand}/primaryTouch",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
