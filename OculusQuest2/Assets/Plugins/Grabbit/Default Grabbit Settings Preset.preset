@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Default Grabbit Settings Preset
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 09cccc44a67846a6b304f6ee73243a31,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Speed
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: UseDynamicNonConvexColliders
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ColliderBakingMode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxMeshCollidersCreated
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ColliderResolution
+    value: 300000
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityIterations
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: solverIterations
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useLowQualityConvexCollidersOnSelection
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Constraints
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: GrabbitLogoBlack
+    value: 
+    objectReference: {fileID: 2800000, guid: 197eda62f7957da4aa878d3b37b05749, type: 3}
+  - target: {fileID: 0}
+    propertyPath: GrabbitLogoWhite
+    value: 
+    objectReference: {fileID: 2800000, guid: 12dba8acdd9a09343a54a35692110c15, type: 3}
+  - target: {fileID: 0}
+    propertyPath: GrabbitBigLogoWhite
+    value: 
+    objectReference: {fileID: 2800000, guid: dda09925a91256043ba245d305066ac7, type: 3}
+  - target: {fileID: 0}
+    propertyPath: GrabbitBigLogoBlack
+    value: 
+    objectReference: {fileID: 2800000, guid: 63b301e58447eb644a836a436eaedac2, type: 3}
+  - target: {fileID: 0}
+    propertyPath: HideGrabbitTextLogo
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: GrabbitTextLogo
+    value: 
+    objectReference: {fileID: 2800000, guid: c67732f12c2b0cc418ddf8bdf64fcf1a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: GrabbitFaceBigWhite
+    value: 
+    objectReference: {fileID: 2800000, guid: 4f83a6f415a56db4c8cadd3673a18ca7, type: 3}
+  - target: {fileID: 0}
+    propertyPath: GrabbitFaceBigBlack
+    value: 
+    objectReference: {fileID: 2800000, guid: d34b809e7b8296348afedd3595a3c6e1, type: 3}
+  - target: {fileID: 0}
+    propertyPath: GrabbitSceneLogo
+    value: 
+    objectReference: {fileID: 2800000, guid: 39b6d6b7b3a220e47b750d0734b43d84, type: 3}
+  - target: {fileID: 0}
+    propertyPath: UseSoftCollision
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DisplayWarning
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useNormalFactor
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxNormalSpeedFactor
+    value: 0.7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: debugCollisionDirection
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: GravityStrength.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: GravityStrength.y
+    value: -9.741059
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: GravityStrength.z
+    value: -0.0000011612249
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: LimitBodyVelocityInGravityMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PausePositionReajustment
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ControlRotation
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxVelocity
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: CollisionMaxVelocity
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxAngularVelocity
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MaxDepenetrationVelocity
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: UseBoundDependantValues
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: CollisionMinBoundFactor
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: CollisionMaxBoundFactor
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: BoundVolumeForMinSpeed
+    value: 0.001
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: BoundVolumeForMaxSpeed
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DistanceForTeleportation
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: AngularDrag
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Drag
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useCentroidRelativeTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: resetCentroidRelativeTransformOnMouseUp
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PullToOriginalRotationFactor
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PullToRelativePositionFactor
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: AlignStrength
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ExtraDragForRotationMode
+    value: 100
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
