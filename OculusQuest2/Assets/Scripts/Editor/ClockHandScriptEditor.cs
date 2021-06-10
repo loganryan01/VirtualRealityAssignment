@@ -9,6 +9,7 @@ public class ClockHandScriptEditor : Editor
     SerializedProperty numberOfPoints;
     SerializedProperty rotationAxis;
     SerializedProperty correctionStrength;
+    SerializedProperty counterTorqueStrength;
     SerializedProperty smallHand;
     SerializedProperty puzzleHour;
     SerializedProperty puzzleMinute;
@@ -25,6 +26,7 @@ public class ClockHandScriptEditor : Editor
         numberOfPoints = serializedObject.FindProperty("numberOfPoints");
         rotationAxis = serializedObject.FindProperty("rotationAxis");
         correctionStrength = serializedObject.FindProperty("correctionStrength");
+        counterTorqueStrength = serializedObject.FindProperty("counterTorqueStrength");
         smallHand = serializedObject.FindProperty("smallHand");
         puzzleHour = serializedObject.FindProperty("puzzleHour");
         puzzleMinute = serializedObject.FindProperty("puzzleMinute");
@@ -43,6 +45,7 @@ public class ClockHandScriptEditor : Editor
         EditorGUILayout.PropertyField(numberOfPoints);
         EditorGUILayout.PropertyField(rotationAxis);
         EditorGUILayout.PropertyField(correctionStrength);
+        EditorGUILayout.PropertyField(counterTorqueStrength);
         EditorGUILayout.Space();
         EditorGUILayout.PropertyField(smallHand);
         EditorGUILayout.PropertyField(puzzleMinute);

@@ -41,6 +41,8 @@ public class KeyholeScript : MonoBehaviour
         Rigidbody rigid = key.GetComponent<Rigidbody>();
         rigid.useGravity = false;
         rigid.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        // Make the key a trigger so it doesent get stuck inside the case collider
+        key.GetComponent<Collider>().isTrigger = true;
         // Move the key to the correct position
         key.transform.position = keyLockTransform.position;
         key.transform.rotation = keyLockTransform.rotation;

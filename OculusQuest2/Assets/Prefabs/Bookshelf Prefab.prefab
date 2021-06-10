@@ -92,13 +92,14 @@ GameObject:
   - component: {fileID: 4469894214770399934}
   - component: {fileID: 695694603486598427}
   - component: {fileID: 3333628853786075601}
+  - component: {fileID: 4057675415341530411}
   - component: {fileID: 4144147725854440740}
   m_Layer: 0
-  m_Name: SM_Bookshelf
+  m_Name: Bookshelf Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4469894214770399934
 Transform:
@@ -167,6 +168,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4057675415341530411
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838071524968284164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: -1
+  m_Mesh: {fileID: -6072044538983993093, guid: 6f5472f4627eacc45864ceab0e1d6194, type: 3}
 --- !u!114 &4144147725854440740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +209,7 @@ GameObject:
   - component: {fileID: 9052647167835503361}
   - component: {fileID: 758714587363981236}
   - component: {fileID: 4124935233700304760}
+  - component: {fileID: 7435731544901607267}
   - component: {fileID: 4144147725854440743}
   - component: {fileID: 4144147725854440742}
   - component: {fileID: 4144147725854440793}
@@ -267,6 +283,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7435731544901607267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8435959535719245447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0006781029, y: 0.0025066703, z: 0.0025831957}
+  m_Center: {x: -0.0000000021245796, y: -0.001099329, z: -0.00009127472}
 --- !u!54 &4144147725854440743
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -307,7 +336,7 @@ MonoBehaviour:
   onStartOfRail:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4144147725854440740}
         m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
         m_MethodName: OnBookReturned
         m_Mode: 3
@@ -322,7 +351,7 @@ MonoBehaviour:
   onEndOfRail:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4144147725854440740}
         m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
         m_MethodName: OnBookPulled
         m_Mode: 3
@@ -425,6 +454,7 @@ GameObject:
   - component: {fileID: 7530371406819681853}
   - component: {fileID: 6359551239818641474}
   - component: {fileID: 714001605445202702}
+  - component: {fileID: 6365056579564110929}
   - component: {fileID: 4144147725854440797}
   - component: {fileID: 4144147725854440796}
   - component: {fileID: 4144147725854440799}
@@ -498,6 +528,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6365056579564110929
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8655504317641806058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0006781029, y: 0.0025066703, z: 0.0025831957}
+  m_Center: {x: 0.0000000030559022, y: -0.001099329, z: -0.00009127472}
 --- !u!54 &4144147725854440797
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -538,7 +581,7 @@ MonoBehaviour:
   onStartOfRail:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4144147725854440740}
         m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
         m_MethodName: OnBookReturned
         m_Mode: 3
@@ -553,7 +596,7 @@ MonoBehaviour:
   onEndOfRail:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4144147725854440740}
         m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
         m_MethodName: OnBookPulled
         m_Mode: 3
@@ -656,6 +699,7 @@ GameObject:
   - component: {fileID: 5502929221203098169}
   - component: {fileID: 3105976316779863166}
   - component: {fileID: 8875049363474014091}
+  - component: {fileID: 759735434628323561}
   - component: {fileID: 4144147725854440792}
   - component: {fileID: 4144147725854440795}
   - component: {fileID: 4144147725854440794}
@@ -729,6 +773,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &759735434628323561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8961977097094772817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0006781029, y: 0.0025066703, z: 0.0025831957}
+  m_Center: {x: -0.0000000011932569, y: -0.001099329, z: -0.00009127472}
 --- !u!54 &4144147725854440792
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -769,7 +826,7 @@ MonoBehaviour:
   onStartOfRail:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4144147725854440740}
         m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
         m_MethodName: OnBookReturned
         m_Mode: 3
@@ -784,7 +841,7 @@ MonoBehaviour:
   onEndOfRail:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4144147725854440740}
         m_TargetAssemblyTypeName: BookPuzzleHandler, Assembly-CSharp
         m_MethodName: OnBookPulled
         m_Mode: 3

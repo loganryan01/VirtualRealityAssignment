@@ -6,9 +6,20 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody))]
 public class ClockHandMovement : MonoBehaviour
 {
+    public enum Axis
+    {
+        X,
+        Y,
+        Z
+    }
+
+    [Tooltip("The axis the object should rotate on")]
+    public Axis rotationAxis;
+
     public int numberOfPoints = 12;
-    public Vector3 rotationAxis;
     public float correctionStrength = 5;
+    public float counterTorqueStrength = 2;
+    
     public Transform smallHand;
     // The correct time to be entered
     public float puzzleMinute;
@@ -18,6 +29,9 @@ public class ClockHandMovement : MonoBehaviour
     public float puzzleThreshold = 0.1f;
     public UnityEvent onPuzzleComplete;
 
+
+    Vector3 axis;
+    Vector3 zeroDirection;
 
     float divisionSize;
     Rigidbody rb;
@@ -31,48 +45,73 @@ public class ClockHandMovement : MonoBehaviour
 
     void Start()
     {
-        rotationAxis.Normalize();
-
         divisionSize = 360 / numberOfPoints;
 
         rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = Vector3.zero;
+        rb.ResetInertiaTensor();
 
         lastRot = transform.eulerAngles.x;
+
+        // Set direction vectors according to selected axis
+        switch (rotationAxis)
+        {
+            case Axis.X:
+                axis = Vector3.right;
+                zeroDirection = Vector3.up;
+                break;
+            case Axis.Y:
+                axis = Vector3.up;
+                zeroDirection = Vector3.forward;
+                break;
+            case Axis.Z:
+                axis = Vector3.forward;
+                zeroDirection = Vector3.up;
+                break;
+        }
     }
 
     void FixedUpdate()
     {
-        // ---------- Big Hand ----------
-        Vector3 currentRot = transform.eulerAngles;
-        Vector3 localUp = transform.up;
-
-        // Get the current rotation along the axis
-        float angle = Vector3.SignedAngle(Vector3.up, localUp, rotationAxis) + 180 + divisionSize * 0.5f;
-
-        // Find the amount that the hand is off from a stable point
-        float diff = divisionSize * 0.5f - (angle % divisionSize);
-
-        // Flip the direction sometimes, I dont know. This will probably break if the object is not rotating on the x axis
-        if (currentRot.y == 180 || (currentRot.z == 180 && currentRot.x > 270) || (currentRot.z == 180 && currentRot.x < 90))
+        Vector3 bigHandForward, smallHandForward;
+        switch (rotationAxis)
         {
-            diff *= -1;
+            case Axis.X:
+                bigHandForward = transform.up;
+                smallHandForward = smallHand.up;
+                break;
+            case Axis.Y:
+                bigHandForward = transform.forward;
+                smallHandForward = smallHand.forward;
+                break;
+            case Axis.Z:
+                bigHandForward = transform.up;
+                smallHandForward = smallHand.up;
+                break;
+
+            default:
+                bigHandForward = Vector3.up;
+                smallHandForward = Vector3.up;
+                break;
         }
 
-        // Find the change in rotation, and the new rotation
-        Vector3 torque = rotationAxis * diff * correctionStrength * Time.deltaTime;
-        Vector3 newRot = currentRot + torque;
-        rb.MoveRotation(Quaternion.Euler(newRot));
+
+        // ---------- Big Hand ----------
+        // Get the current rotation along the axis
+        float angle = Vector3.SignedAngle(zeroDirection, bigHandForward, axis) + 180 + divisionSize * 0.5f;
+        // Find the amount that the hand is off from a stable point as a scalar
+        float diff = divisionSize * 0.5f - (angle % divisionSize);
+        diff /= (divisionSize * 0.5f);
+        // Use the angular velocity along the rotation axis to prevent over rotating
+        float counterTorque = Vector3.Dot(rb.angularVelocity, axis) * counterTorqueStrength * (1.2f - diff);
+
+        // Calculate and apply torque
+        Vector3 torque = axis * (diff * correctionStrength - counterTorque);
+        rb.AddTorque(torque * Time.fixedDeltaTime);
 
 
         // ---------- Small Hand ----------
         float rotDiff = angle - lastRot;
-        Vector3 smallRot = smallHand.eulerAngles;
-
-        // IDK, it works
-        if (smallRot.y == 180 || (smallRot.z == 180 && smallRot.x > 270) || (smallRot.z == 180 && smallRot.x < 90))
-        {
-            rotDiff *= -1;
-        }
         // Loop over-rotation
         if (rotDiff > 180)
         {
@@ -83,12 +122,15 @@ public class ClockHandMovement : MonoBehaviour
             rotDiff += 360;
         }
 
-        // Convert to hours for small hand
-        smallRot.x += rotDiff / 12;
-        smallHand.eulerAngles = smallRot;
-        // Get the current rotation of the small hand
-        smallHandRot = Vector3.SignedAngle(Vector3.up, smallHand.up, rotationAxis) + 180;
+        // Get the rotation of the small hand
+        smallHandRot = Vector3.SignedAngle(zeroDirection, smallHandForward, axis);
+        // Convert the big hand difference to hours and add it to the small hand
+        smallHandRot += rotDiff / 12;
+        // Rotate the small hand
+        smallHand.eulerAngles = Vector3.zero + (axis * smallHandRot );
 
+
+        // Update last big hand rotation
         lastRot = angle;
 
 

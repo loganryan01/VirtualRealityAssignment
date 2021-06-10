@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 5333229217858380795}
   - component: {fileID: 8527736493527227201}
   - component: {fileID: 4424453934540890584}
+  - component: {fileID: 89400749379585551}
   - component: {fileID: 2729340003905289269}
   - component: {fileID: 9105315504255349808}
   m_Layer: 0
@@ -164,6 +165,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &89400749379585551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711606417836888547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.020000005, z: 0.060108814}
+  m_Center: {x: -0.0000013541429, y: 0.0000004186042, z: 0.02755533}
 --- !u!54 &2729340003905289269
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -192,9 +206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5937a5349f0ba3489a3de3f06b1e099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationAxis: 0
   numberOfPoints: 12
-  rotationAxis: {x: 1, y: 0, z: 0}
   correctionStrength: 5
+  counterTorqueStrength: 5
   smallHand: {fileID: 6939846530028011071}
   puzzleMinute: 105
   puzzleHour: 11
@@ -216,12 +231,13 @@ GameObject:
   - component: {fileID: 5628675854757348916}
   - component: {fileID: 8769292750159759761}
   - component: {fileID: 6797688868066737499}
+  - component: {fileID: 1884591490751303739}
   m_Layer: 0
-  m_Name: SM_GrandfatherClock
+  m_Name: Grandfather Clock Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5628675854757348916
 Transform:
@@ -288,3 +304,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1884591490751303739
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4996394634517224590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: -1
+  m_Mesh: {fileID: -8584055724983555608, guid: ec76a547645ef94458a03debdc247f55, type: 3}
