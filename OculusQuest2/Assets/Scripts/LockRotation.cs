@@ -20,6 +20,8 @@ public class LockRotation : MonoBehaviour
     [Tooltip("The end angle cap")]
     public float endAngle;
 
+    public float grabDifference;
+
     public UnityEvent onStartAngle;
     public UnityEvent onEndAngle;
 
@@ -31,8 +33,22 @@ public class LockRotation : MonoBehaviour
 
 
 
+    public void OnGrab()
+    {
+        startAngle += grabDifference;
+        endAngle -= grabDifference;
+    }
+
+    public void OnDrop()
+    {
+        startAngle -= grabDifference;
+        endAngle += grabDifference;
+    }
+
     void Start()
     {
+        GetComponent<Rigidbody>().centerOfMass = Vector3.zero;
+        
         halfAngleDiff = (endAngle - startAngle) * 0.5f;
         initialRotation = transform.rotation;
 
