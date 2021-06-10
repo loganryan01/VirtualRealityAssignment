@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 402bb805fa45b9b4cae190e3aaf015b7, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 61b8c0c71c38650419eefa90a14b8e72, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -582,6 +582,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5957393556419089687, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+      propertyPath: m_EnableInputActions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5957393556702707970, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
       propertyPath: m_Name
       value: XR Setup Prefab
@@ -633,11 +637,11 @@ PrefabInstance:
     - target: {fileID: 5957393556702707983, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
       propertyPath: leftTeleportController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1490301577}
     - target: {fileID: 5957393556702707983, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
       propertyPath: rightTeleportController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 612166508}
     - target: {fileID: 5957393556773711404, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
       propertyPath: m_InteractionLayerMask.m_Bits
       value: 4294967295
@@ -684,6 +688,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5957393557099660637, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
       propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620989389999304175, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+      propertyPath: m_EnableInputTracking
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -928,7 +936,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 283241502}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -951,13 +959,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283241499}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1281,6 +1289,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610930153}
   m_CullTransparentMesh: 0
+--- !u!1 &612166508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4518450466696791075, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+  m_PrefabInstance: {fileID: 218244164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &648790208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5957393556419089672, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
@@ -2378,7 +2391,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1040179687}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -2401,13 +2414,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040179684}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2895,7 +2908,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1404875087}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -2918,20 +2931,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404875083}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3344,6 +3357,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466506776}
   m_CullTransparentMesh: 0
+--- !u!1 &1490301577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3339806268828883261, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+  m_PrefabInstance: {fileID: 218244164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1506569249
 GameObject:
   m_ObjectHideFlags: 0

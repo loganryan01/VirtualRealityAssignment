@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1894581551474234424}
   - component: {fileID: 1889659205569384454}
   - component: {fileID: 2960163059256483430}
+  - component: {fileID: 5759086409919023083}
+  - component: {fileID: 5003020127768064371}
   m_Layer: 0
   m_Name: PhilippinesButton
   m_TagString: Untagged
@@ -81,6 +83,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5759086409919023083
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571437979537962360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -639766676582337638, guid: c68aaf837ff51e747849495229f73265, type: 3}
+--- !u!114 &5003020127768064371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571437979537962360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67200853e4771914cb47a97af952f486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2654327973731622499
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +121,8 @@ GameObject:
   - component: {fileID: 3504465157673084215}
   - component: {fileID: 8259132196896392762}
   - component: {fileID: 1128318687955021147}
+  - component: {fileID: 870626621864169826}
+  - component: {fileID: 5994719637837664282}
   m_Layer: 0
   m_Name: ThailandButton
   m_TagString: Untagged
@@ -162,6 +193,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &870626621864169826
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654327973731622499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1668942824097032331, guid: c68aaf837ff51e747849495229f73265, type: 3}
+--- !u!114 &5994719637837664282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654327973731622499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67200853e4771914cb47a97af952f486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &4415219218629765632
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +231,8 @@ GameObject:
   - component: {fileID: 203968716499169570}
   - component: {fileID: 385783147450236747}
   - component: {fileID: 9223204499577825417}
+  - component: {fileID: 5313914697731314100}
+  - component: {fileID: 6132372027910461421}
   m_Layer: 0
   m_Name: ChinaButton
   m_TagString: Untagged
@@ -243,6 +303,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5313914697731314100
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415219218629765632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7341356288856304272, guid: c68aaf837ff51e747849495229f73265, type: 3}
+--- !u!114 &6132372027910461421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415219218629765632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67200853e4771914cb47a97af952f486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &4839190658293188013
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,8 +341,8 @@ GameObject:
   - component: {fileID: 8958245604859633908}
   - component: {fileID: 7542677842574785038}
   - component: {fileID: 5288342240567867548}
-  - component: {fileID: 6015310062890100376}
   - component: {fileID: 6015310062890100377}
+  - component: {fileID: 1587371589572013310}
   m_Layer: 0
   m_Name: IndiaButton
   m_TagString: Untagged
@@ -326,22 +413,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6015310062890100376
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4839190658293188013}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &6015310062890100377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +426,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPosition: {x: -0.001574, y: 0.007046, z: 0.003033}
+--- !u!64 &1587371589572013310
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4839190658293188013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3496699599037696507, guid: c68aaf837ff51e747849495229f73265, type: 3}
 --- !u!1 &6898324340625415109
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +452,7 @@ GameObject:
   - component: {fileID: 7160668747631939290}
   - component: {fileID: 4952614889178216976}
   m_Layer: 0
-  m_Name: SM_Globe
+  m_Name: Globe Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,6 +537,8 @@ GameObject:
   - component: {fileID: 7108176940768408951}
   - component: {fileID: 5103053105784961664}
   - component: {fileID: 3269069419901975379}
+  - component: {fileID: 6642760062289281285}
+  - component: {fileID: 8081039710841692028}
   m_Layer: 0
   m_Name: JapanButton
   m_TagString: Untagged
@@ -522,3 +609,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6642760062289281285
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048788058356283806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 905799401683783930, guid: c68aaf837ff51e747849495229f73265, type: 3}
+--- !u!114 &8081039710841692028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048788058356283806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67200853e4771914cb47a97af952f486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPosition: {x: 0, y: 0, z: 0}
