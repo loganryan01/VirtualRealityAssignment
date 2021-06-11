@@ -368,7 +368,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 1556754667}
   m_AttachEaseInTime: 0.15
   m_MovementType: 0
   m_TrackPosition: 1

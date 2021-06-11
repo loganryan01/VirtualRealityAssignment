@@ -50,6 +50,10 @@ public class KeyholeScript : MonoBehaviour
         LockRotation rotScript = key.GetComponent<LockRotation>();
         rotScript.enabled = true;
         rotScript.onEndAngle.AddListener(OnKeyTurned);
+
+        // Update the tag and attach transform so the hand is placed correctly
+        key.tag = "Static Grabbable";
+        key.GetComponent<XRGrabInteractable>().attachTransform = key.transform.GetChild(1); //the second child is the hand position
     }
 
     // Called when the key has been turned
