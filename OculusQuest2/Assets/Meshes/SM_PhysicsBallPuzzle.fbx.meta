@@ -3,7 +3,22 @@ guid: 1d7b43de374366748a95aa8008a43900
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 21c52e0d405f2ea4d9343cc10485c2d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: fd1c9d6b1b2ed59428480d6435dac57c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: f9b45c658ff065b4eb39f1c72ff07f56, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
