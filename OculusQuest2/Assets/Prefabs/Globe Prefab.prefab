@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1894581551474234424}
   - component: {fileID: 1889659205569384454}
   - component: {fileID: 2960163059256483430}
-  - component: {fileID: 5759086409919023083}
   - component: {fileID: 5003020127768064371}
+  - component: {fileID: 306223589}
+  - component: {fileID: 306223588}
   m_Layer: 0
   m_Name: PhilippinesButton
   m_TagString: Untagged
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571437979537962360}
-  m_Mesh: {fileID: -639766676582337638, guid: c68aaf837ff51e747849495229f73265, type: 3}
+  m_Mesh: {fileID: -639766676582337638, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!23 &2960163059256483430
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5759086409919023083
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571437979537962360}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -639766676582337638, guid: c68aaf837ff51e747849495229f73265, type: 3}
 --- !u!114 &5003020127768064371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +96,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67200853e4771914cb47a97af952f486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: 0, y: 0, z: 0}
+  speed: 0.5
+  depth: {x: 0, y: 0.01, z: 0}
+--- !u!54 &306223589
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571437979537962360}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &306223588
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571437979537962360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -639766676582337638, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!1 &2654327973731622499
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,8 +139,9 @@ GameObject:
   - component: {fileID: 3504465157673084215}
   - component: {fileID: 8259132196896392762}
   - component: {fileID: 1128318687955021147}
-  - component: {fileID: 870626621864169826}
   - component: {fileID: 5994719637837664282}
+  - component: {fileID: 2071514093}
+  - component: {fileID: 2071514094}
   m_Layer: 0
   m_Name: ThailandButton
   m_TagString: Untagged
@@ -151,7 +170,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2654327973731622499}
-  m_Mesh: {fileID: 1668942824097032331, guid: c68aaf837ff51e747849495229f73265, type: 3}
+  m_Mesh: {fileID: 1668942824097032331, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!23 &1128318687955021147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -193,20 +212,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &870626621864169826
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2654327973731622499}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1668942824097032331, guid: c68aaf837ff51e747849495229f73265, type: 3}
 --- !u!114 &5994719637837664282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +224,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67200853e4771914cb47a97af952f486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: 0, y: 0, z: 0}
+  speed: 0.5
+  depth: {x: 0, y: 0.01, z: 0}
+--- !u!54 &2071514093
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654327973731622499}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2071514094
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654327973731622499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1668942824097032331, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!1 &4415219218629765632
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,8 +267,9 @@ GameObject:
   - component: {fileID: 203968716499169570}
   - component: {fileID: 385783147450236747}
   - component: {fileID: 9223204499577825417}
-  - component: {fileID: 5313914697731314100}
   - component: {fileID: 6132372027910461421}
+  - component: {fileID: 1633725626}
+  - component: {fileID: 1633725622}
   m_Layer: 0
   m_Name: ChinaButton
   m_TagString: Untagged
@@ -248,7 +285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415219218629765632}
   m_LocalRotation: {x: 0.28913736, y: 0.029922774, z: -0.09226039, w: 0.9523614}
-  m_LocalPosition: {x: 0.0015411973, y: 0.0063612843, z: 0.004923702}
+  m_LocalPosition: {x: 0.00154, y: 0.00634, z: 0.0049}
   m_LocalScale: {x: 0.99998254, y: 1.0000932, z: 1.0000517}
   m_Children: []
   m_Father: {fileID: 6120415931569586559}
@@ -261,7 +298,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415219218629765632}
-  m_Mesh: {fileID: -7341356288856304272, guid: c68aaf837ff51e747849495229f73265, type: 3}
+  m_Mesh: {fileID: -1018060543984382726, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!23 &9223204499577825417
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -303,20 +340,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5313914697731314100
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4415219218629765632}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7341356288856304272, guid: c68aaf837ff51e747849495229f73265, type: 3}
 --- !u!114 &6132372027910461421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +352,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67200853e4771914cb47a97af952f486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: 0, y: 0, z: 0}
+  speed: 0.5
+  depth: {x: 0, y: 0.01, z: 0}
+--- !u!54 &1633725626
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415219218629765632}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1633725622
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415219218629765632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1018060543984382726, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!1 &4839190658293188013
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +396,8 @@ GameObject:
   - component: {fileID: 7542677842574785038}
   - component: {fileID: 5288342240567867548}
   - component: {fileID: 6015310062890100377}
-  - component: {fileID: 1587371589572013310}
+  - component: {fileID: 1988135137}
+  - component: {fileID: 1988135133}
   m_Layer: 0
   m_Name: IndiaButton
   m_TagString: Untagged
@@ -371,7 +426,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4839190658293188013}
-  m_Mesh: {fileID: -3496699599037696507, guid: c68aaf837ff51e747849495229f73265, type: 3}
+  m_Mesh: {fileID: -3496699599037696507, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!23 &5288342240567867548
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -425,8 +480,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67200853e4771914cb47a97af952f486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: -0.001574, y: 0.007046, z: 0.003033}
---- !u!64 &1587371589572013310
+  speed: 0.5
+  depth: {x: 0, y: 0.01, z: 0}
+--- !u!54 &1988135137
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4839190658293188013}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1988135133
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,7 +511,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -3496699599037696507, guid: c68aaf837ff51e747849495229f73265, type: 3}
+  m_Mesh: {fileID: -3496699599037696507, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!1 &6898324340625415109
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +523,7 @@ GameObject:
   - component: {fileID: 6120415931569586559}
   - component: {fileID: 7160668747631939290}
   - component: {fileID: 4952614889178216976}
+  - component: {fileID: 6015310062341628915}
   m_Layer: 0
   m_Name: Globe Prefab
   m_TagString: Untagged
@@ -465,7 +538,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6898324340625415109}
-  m_LocalRotation: {x: -0.18917389, y: 0.7013451, z: 0.5875053, w: 0.35660326}
+  m_LocalRotation: {x: -0.18917702, y: 0.701344, z: 0.5875038, w: 0.3566061}
   m_LocalPosition: {x: 4.277645, y: 0.66811216, z: -2.3265338}
   m_LocalScale: {x: 74.38553, y: 74.37874, z: 74.66645}
   m_Children:
@@ -476,7 +549,7 @@ Transform:
   - {fileID: 3504465157673084215}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -73.538, y: 101.262, z: 32.836}
 --- !u!33 &7160668747631939290
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -484,7 +557,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6898324340625415109}
-  m_Mesh: {fileID: -6384659345097177991, guid: c68aaf837ff51e747849495229f73265, type: 3}
+  m_Mesh: {fileID: -6384659345097177991, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!23 &4952614889178216976
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -526,6 +599,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6015310062341628915
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898324340625415109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6384659345097177991, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!1 &7048788058356283806
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,8 +624,9 @@ GameObject:
   - component: {fileID: 7108176940768408951}
   - component: {fileID: 5103053105784961664}
   - component: {fileID: 3269069419901975379}
-  - component: {fileID: 6642760062289281285}
   - component: {fileID: 8081039710841692028}
+  - component: {fileID: 1279690290}
+  - component: {fileID: 1279690291}
   m_Layer: 0
   m_Name: JapanButton
   m_TagString: Untagged
@@ -567,7 +655,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7048788058356283806}
-  m_Mesh: {fileID: 905799401683783930, guid: c68aaf837ff51e747849495229f73265, type: 3}
+  m_Mesh: {fileID: 905799401683783930, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
 --- !u!23 &3269069419901975379
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -609,20 +697,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6642760062289281285
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7048788058356283806}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 905799401683783930, guid: c68aaf837ff51e747849495229f73265, type: 3}
 --- !u!114 &8081039710841692028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,4 +709,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67200853e4771914cb47a97af952f486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: 0, y: 0, z: 0}
+  speed: 0.5
+  depth: {x: 0, y: 0.01, z: 0}
+--- !u!54 &1279690290
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048788058356283806}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1279690291
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048788058356283806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 905799401683783930, guid: 61ceac94169f7b44199233bebec2817b, type: 3}
