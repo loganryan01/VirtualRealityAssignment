@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: f4f404cbd37de104a86d5c60b8bf7e58
 ModelImporter:
   serializedVersion: 20101
@@ -9,6 +10,13 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: lambert2
     second: {fileID: 2100000, guid: ce36cbeb366baf24a8659d68b83102f3, type: 2}
+=======
+guid: c2d798f3f786a374abced6e5bb4f6c4b
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects: {}
+>>>>>>> Stashed changes
   materials:
     materialImportMode: 1
     materialName: 0
