@@ -22,7 +22,7 @@ public class EditorSimulatorToggle : MonoBehaviour
         else
         {
             deviceSimulator.SetActive(false);
-            cameraController.enabled = true;
+            cameraController.enabled = false;
         }
     }
 }

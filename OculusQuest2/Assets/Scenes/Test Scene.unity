@@ -253,11 +253,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5957393555666824612, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5957393555666824615, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5957393556702707970, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
       propertyPath: m_Name
@@ -307,6 +307,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5957393556702707983, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+      propertyPath: leftTeleportController
+      value: 
+      objectReference: {fileID: 98693056}
+    - target: {fileID: 5957393556702707983, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+      propertyPath: rightTeleportController
+      value: 
+      objectReference: {fileID: 98693055}
     - target: {fileID: 5957393557099660626, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
       propertyPath: m_Enabled
       value: 0
