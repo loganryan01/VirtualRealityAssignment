@@ -29,6 +29,10 @@ public class HandPoser : MonoBehaviour
 
     private bool isUsingTeleport;
 
+    public Transform physicalController;
+    public Transform handTrans;
+
+
 
     void Start()
     {
@@ -96,6 +100,25 @@ public class HandPoser : MonoBehaviour
         anim.SetLayerWeight(3, 1);
         anim.SetLayerWeight(4, 1);
         anim.SetLayerWeight(5, 1);
+
+
+        if (interactable != null && interactable.CompareTag("Static Grabbable"))
+        {
+            Transform attachTrans = (interactable as XRGrabInteractable).attachTransform;
+
+            handTrans.parent = attachTrans;
+            handTrans.localPosition = Vector3.zero;
+            handTrans.localRotation = Quaternion.identity;
+            // If the scale is incorrect, calculate the correct local scale
+            if (handTrans.lossyScale != Vector3.one)
+            {
+                Vector3 scale;
+                scale.x = 1.0f / attachTrans.lossyScale.x;
+                scale.y = 1.0f / attachTrans.lossyScale.y;
+                scale.z = 1.0f / attachTrans.lossyScale.z;
+                handTrans.localScale = scale;
+            }
+        }
     }
 
     // Called when the controller drops an object
@@ -103,6 +126,15 @@ public class HandPoser : MonoBehaviour
     {
         //stop using grab pose, start using animations
         isUsingPose = false;
+
+
+        if (interactable != null && interactable.CompareTag("Static Grabbable"))
+        {
+            handTrans.parent = physicalController;
+            handTrans.localPosition = Vector3.zero;
+            handTrans.localRotation = Quaternion.identity;
+            handTrans.localScale = Vector3.one;
+        }
     }
 
 
