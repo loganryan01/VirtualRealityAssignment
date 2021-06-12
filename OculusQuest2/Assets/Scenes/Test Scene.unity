@@ -1328,6 +1328,7 @@ MonoBehaviour:
     endRotation: {x: -280, y: 0, z: 0}
     sqrLength: 0
   currentRail: 0
+  useLocalSpace: 0
   onStartOfRail:
     m_PersistentCalls:
       m_Calls:
@@ -1464,6 +1465,7 @@ MonoBehaviour:
     endRotation: {x: -280, y: 0, z: 0}
     sqrLength: 0
   currentRail: 0
+  useLocalSpace: 0
   onStartOfRail:
     m_PersistentCalls:
       m_Calls:
@@ -2105,6 +2107,7 @@ MonoBehaviour:
     endRotation: {x: -280, y: 0, z: 0}
     sqrLength: 0
   currentRail: 0
+  useLocalSpace: 0
   onStartOfRail:
     m_PersistentCalls:
       m_Calls:
@@ -2794,6 +2797,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBookOrder: 000000000100000002000000
   onPuzzleComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPuzzleFailed:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1633725619 stripped

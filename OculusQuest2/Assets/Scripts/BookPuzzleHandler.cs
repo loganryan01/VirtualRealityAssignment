@@ -7,56 +7,56 @@ public class BookPuzzleHandler : MonoBehaviour
 {
     // Order to pull books in using their index
     public int[] puzzleBookOrder;
-    
+    [Space]
     public UnityEvent onPuzzleComplete;
+    public UnityEvent onPuzzleFailed;
 
-    int[] currentOrder = { -1, -1, -1 };
+    List<int> currentOrder = new List<int>();
+    List<int> pulledBooks = new List<int>();
 
 
 
     public void OnBookPulled(int index)
     {
-        // Add book to current order
-        for (int i = 0; i < currentOrder.Length; i++)
-        {
-            // If the book has already been added, ignore it
-            if (currentOrder[i] == index)
+        // If this book has not been returned yet, ignore it
+        if (pulledBooks.Contains(index))
+		{
+            return;
+        }
+        
+        pulledBooks.Add(index);
+        currentOrder.Add(index);
+
+
+        // If enough books have been pulled, check if the order is correct
+        if (currentOrder.Count == puzzleBookOrder.Length)
+		{
+            // Check if the books have been pulled in the correct order
+            bool isCorrectOrder = true;
+            for (int i = 0; i < puzzleBookOrder.Length; i++)
+            {
+                if (currentOrder[i] != puzzleBookOrder[i])
+                {
+                    isCorrectOrder = false;
+                    break;
+                }
+            }
+
+            if (isCorrectOrder)
+            {
+                onPuzzleComplete.Invoke();
+                this.enabled = false;
+            }
+			else
 			{
-                return;
-			}
-
-            // If the index in unassigned, use it
-            if (currentOrder[i] == -1)
-            {
-                currentOrder[i] = index;
-                break;
+                onPuzzleFailed.Invoke();
+                currentOrder.Clear();
             }
-        }
-
-        // Check if the books have been pulled in the correct order
-        bool isCorrectOrder = true;
-        for (int i = 0; i < puzzleBookOrder.Length; i++)
-        {
-            if (currentOrder[i] != puzzleBookOrder[i])
-            {
-                isCorrectOrder = false;
-                break;
-            }
-        }
-
-        if (isCorrectOrder)
-        {
-            onPuzzleComplete.Invoke();
-            this.enabled = false;
         }
     }
 
     public void OnBookReturned(int index)
-    {
-        // Reset current order
-        for (int i = 0; i < currentOrder.Length; i++)
-        {
-            currentOrder[i] = -1;
-        }
-    }
+	{
+        pulledBooks.Remove(index);
+	}
 }

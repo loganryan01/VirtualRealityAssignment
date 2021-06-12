@@ -28,6 +28,9 @@ public class RailSystem : MonoBehaviour
     [HideInInspector]
     public uint currentRail = 0;
 
+    [Tooltip("Should rails be concidered in local space or world space?")]
+    public bool useLocalSpace = false;
+
     public UnityEvent onStartOfRail;
     public UnityEvent onEndOfRail;
 
@@ -46,6 +49,17 @@ public class RailSystem : MonoBehaviour
         // Calculate the length of each rail segment
         for (int i = 0; i < rails.Length; i++)
         {
+            // Convert from local to world space is option is selected
+            if (useLocalSpace)
+            {
+                rails[i].start = transform.position + (Vector3)(transform.localToWorldMatrix * rails[i].start);
+                rails[i].end = transform.position + (Vector3)(transform.localToWorldMatrix * rails[i].end);
+                rails[i].curvePoint = transform.position + (Vector3)(transform.localToWorldMatrix * rails[i].curvePoint);
+
+                rails[i].startRotation = (transform.rotation * Quaternion.Euler(rails[i].startRotation)).eulerAngles;
+                rails[i].endRotation = (transform.rotation * Quaternion.Euler(rails[i].endRotation)).eulerAngles;
+            }
+
             rails[i].sqrLength = Vector3.SqrMagnitude(rails[i].start - rails[i].end);
         }
     }

@@ -14,6 +14,7 @@ public class RailEditor : Editor
     SerializedProperty onStartOfRail;
     SerializedProperty onEndOfRail;
     SerializedProperty color;
+    SerializedProperty useLocal;
 
     
     
@@ -23,6 +24,7 @@ public class RailEditor : Editor
         onStartOfRail = serializedObject.FindProperty("onStartOfRail");
         onEndOfRail = serializedObject.FindProperty("onEndOfRail");
         color = serializedObject.FindProperty("color");
+        useLocal = serializedObject.FindProperty("useLocalSpace");
 
         // Set default values
         for (int i = 0; i < showElement.Length; i++)
@@ -75,6 +77,8 @@ public class RailEditor : Editor
         EditorGUI.indentLevel--;
 
         // Display the remaining properties
+        EditorGUILayout.PropertyField(useLocal);
+        EditorGUILayout.Space();
         EditorGUILayout.PropertyField(onStartOfRail);
         EditorGUILayout.PropertyField(onEndOfRail);
         EditorGUILayout.PropertyField(color);
@@ -87,14 +91,18 @@ public class RailEditor : Editor
     void OnSceneGUI()
     {
         RailSystem railSystem = (RailSystem)target;
+        Transform railTrans = railSystem.transform;
 
-        // Display object data
-        Handles.Label(railSystem.transform.position,
-            railSystem.transform.position.ToString() + 
-            "\nTotal Distance: " + railSystem.totalDist.ToString() +
-            "\nCurrent Rail: " + railSystem.currentRail.ToString() +
-            "\nCurrent Distance: " + railSystem.currentDist.ToString());
 
+        if (EditorApplication.isPlaying)
+		{
+            // Display object data
+            Handles.Label(railTrans.position,
+                railTrans.position.ToString() +
+                "\nTotal Distance: " + railSystem.totalDist.ToString() +
+                "\nCurrent Rail: " + railSystem.currentRail.ToString() +
+                "\nCurrent Distance: " + railSystem.currentDist.ToString());
+        }
 
         Handles.color = railSystem.color;
 
@@ -103,19 +111,43 @@ public class RailEditor : Editor
         {
             RailSystem.RailSegment railSegment = railSystem.rails[i];
 
+            // Convert from local to world if option is selected and in edit mode
+            Vector3 start, end, curvePoint;
+            if (useLocal.boolValue && !EditorApplication.isPlaying)
+			{
+                start = railTrans.position + (Vector3)(railTrans.localToWorldMatrix * railSegment.start);
+                end = railTrans.position + (Vector3)(railTrans.localToWorldMatrix * railSegment.end);
+                curvePoint = railTrans.position + (Vector3)(railTrans.localToWorldMatrix * railSegment.curvePoint);
+            }
+			else
+			{
+                start = railSegment.start;
+                end = railSegment.end;
+                curvePoint = railSegment.curvePoint;
+            }
+
+            // Draw the rail line
             if (railSegment.isStraight)
             {
-                Handles.DrawLine(railSegment.start, railSegment.end);
+                Handles.DrawLine(start, end);
             }
             else
             {
-                Handles.DrawBezier(railSegment.start, railSegment.end, railSegment.start, railSegment.curvePoint, railSystem.color, null, 1);
+                Handles.DrawBezier(start, end, start, curvePoint, railSystem.color, null, 1);
             }
         }
 
         // Draw discs at the start and end of the current line
         RailSystem.RailSegment currentRail = railSystem.rails[railSystem.currentRail];
-        Handles.DrawWireDisc(currentRail.start, currentRail.start - currentRail.end, 0.1f);
-        Handles.DrawWireDisc(currentRail.end, currentRail.start - currentRail.end, 0.1f);
+        if (useLocal.boolValue && !EditorApplication.isPlaying)
+        {
+            Handles.DrawWireDisc(railTrans.position + (Vector3)(railTrans.localToWorldMatrix * currentRail.start), currentRail.start - currentRail.end, 0.1f);
+            Handles.DrawWireDisc(railTrans.position + (Vector3)(railTrans.localToWorldMatrix * currentRail.end), currentRail.start - currentRail.end, 0.1f);
+        }
+        else
+        {
+            Handles.DrawWireDisc(currentRail.start, currentRail.start - currentRail.end, 0.1f);
+            Handles.DrawWireDisc(currentRail.end, currentRail.start - currentRail.end, 0.1f);
+        }
     }
 }
