@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GlobePuzzleController : MonoBehaviour
 {
@@ -12,75 +13,98 @@ public class GlobePuzzleController : MonoBehaviour
         - if the first button has been pushed then leave it down
         - if the player gets the 2nd button incorrect then reset the puzzle
     */
-    //private HandButton[] globeButtons;
-    private List<HandButton> globeButtons = new List<HandButton>();
 
-    [HideInInspector]
-    public HandButton buttonPushed;
-    
+    public Transform globeTop;
+    public float openTime;
+    public float angle;
+
+    public UnityEvent onPuzzleComplete;
+
+
+    private List<HandButton> pushedButtons = new List<HandButton>();
     private int correctAnswers = 0;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+
+    public void ButtonPressed(HandButton button)
+	{
+        // Check if the button was correct
+        StartCoroutine(CheckButton(button));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (buttonPushed != null && buttonPushed.arrived)
-        {
-            HandButton.ORDER buttonNumber = HandButton.ORDER.First;
-            
-            switch (correctAnswers)
-            {
-                case 1:
-                    buttonNumber = HandButton.ORDER.Second;
-                    break;
-                case 2:
-                    buttonNumber = HandButton.ORDER.Third;
-                    break;
-                case 3:
-                    buttonNumber = HandButton.ORDER.Fourth;
-                    break;
-                case 4:
-                    buttonNumber = HandButton.ORDER.Fifth;
-                    break;
-                default:
-                    break;
-            }
-
-            buttonPushed.arrived = false;
-            StartCoroutine(CheckButton(buttonNumber));
-        }
-    }
-
-    IEnumerator CheckButton(HandButton.ORDER buttonNumber)
+    IEnumerator CheckButton(HandButton button)
     {
         yield return new WaitForSeconds(2);
 
-        if (buttonPushed != null && buttonPushed.orderNumber == buttonNumber)
+        // Add the button to pushed buttons
+        pushedButtons.Add(button);
+
+        // Determine the expected result
+        HandButton.ORDER expectedOrder = HandButton.ORDER.First;
+        switch (correctAnswers)
+        {
+            case 1:
+                expectedOrder = HandButton.ORDER.Second;
+                break;
+            case 2:
+                expectedOrder = HandButton.ORDER.Third;
+                break;
+            case 3:
+                expectedOrder = HandButton.ORDER.Fourth;
+                break;
+            case 4:
+                expectedOrder = HandButton.ORDER.Fifth;
+                break;
+            default:
+                break;
+        }
+
+        // Check if the answer is correct
+        if (button.orderNumber == expectedOrder)
         {
             correctAnswers++;
-            globeButtons.Add(buttonPushed);
-            Debug.Log("Correct Answer");
-        }
-        else if (buttonPushed != null)
-        {
-            Debug.Log("Incorrect Answer. Resetting Puzzle!");
-            buttonPushed.ResetButton();
 
-            foreach (var item in globeButtons)
+            // Check if this was the last answer
+            if (correctAnswers == 5)
+			{
+                Debug.Log("Puzzle complete");
+
+                onPuzzleComplete.Invoke();
+                // Disable the buttons
+                foreach (var item in pushedButtons)
+				{
+                    item.enabled = false;
+				}
+                // Open the globe
+                StartCoroutine(OpenGlobe());
+            }
+        }
+        else
+        {
+            // Reset all pushed buttons
+            foreach (var item in pushedButtons)
             {
                 item.ResetButton();
             }
-
-            globeButtons.Clear();
+            pushedButtons.Clear();
 
             correctAnswers = 0;
         }
-
-        buttonPushed = null;
     }
+
+
+    private IEnumerator OpenGlobe()
+	{
+        Quaternion start = globeTop.rotation;
+        Quaternion end = start * Quaternion.Euler(angle, 0, 0);
+
+        float t = 0;
+        while (t < openTime)
+		{
+            globeTop.rotation = Quaternion.Slerp(start, end, t / openTime);
+
+            t += Time.deltaTime;
+            yield return null;
+		}
+	}
 }

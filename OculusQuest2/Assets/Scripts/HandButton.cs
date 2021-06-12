@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class HandButton : MonoBehaviour
 {
@@ -10,73 +12,71 @@ public class HandButton : MonoBehaviour
         Fourth,
         Fifth
     }
-    
-    public float speed = .5f;
-    public Vector3 depth;
+
     public ORDER orderNumber;
     public GlobePuzzleController globePuzzleController;
 
-    [HideInInspector]
-    public bool arrived = false;
+    public float pressTime;
+    public float popUpTime;
+    public float pressedScale;
 
-    private float fraction = 0;
+
+    private Vector3 initialScale;
+    private Vector3 finalScale;
+
     private bool pressed = false;
-    private bool reset = false;
-    private Vector3 startPosition;
-    private Vector3 endPosition;
 
-    private void Start()
-    {
-        startPosition = transform.position;
-        endPosition = transform.position - depth;
+
+
+	void Start()
+	{
+        initialScale = transform.localScale;
+        finalScale = initialScale * pressedScale;
     }
 
-    private void Update()
-    {
-        //Debug.Log(startPosition);
-        
-        if (pressed && !reset)
-        {
-            if (fraction < 1)
-            {
-                fraction += Time.deltaTime * speed;
-                transform.position = Vector3.Lerp(startPosition, endPosition, fraction);
-            }
-            else
-            {
-                arrived = true;
-            }
-        }
 
-        if (reset)
-        {
-            if (fraction < 1)
-            {
-                fraction += Time.deltaTime * speed;
-                transform.position = Vector3.Lerp(endPosition, startPosition, fraction);
-            }
-            else 
-            {
-                fraction = 0;
-                reset = false;
-                pressed = false;
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
+	private void OnTriggerEnter(Collider other)
     {
-        if (!pressed && other.gameObject.name == "Index" && globePuzzleController.buttonPushed == null)
+        if (!pressed && other.gameObject.layer == LayerMask.NameToLayer("Hand"))
         {
             pressed = true;
-            globePuzzleController.buttonPushed = this;
+            // Move the button down
+            StartCoroutine(MoveButton(true));
         }
     }
-
     // Return the button to the original position
     public void ResetButton()
     {
-        reset = true;
-        fraction = 0;
+        // Move the button back up
+        StartCoroutine(MoveButton(false));
+    }
+
+    private IEnumerator MoveButton(bool isMovingDown)
+	{
+        Vector3 startScale = transform.localScale;
+        Vector3 endScale = isMovingDown ? finalScale : initialScale;
+        float moveTime = isMovingDown ? pressTime : popUpTime;
+
+        // Scale the button. Because the button position is at the center of the globe, this will move it down
+        float t = 0;
+        while (t < moveTime)
+		{
+            transform.localScale = Vector3.Lerp(startScale, endScale, t / moveTime);
+
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+
+        if (isMovingDown)
+		{
+            // Tell the controller that we have been pressed
+            globePuzzleController.ButtonPressed(this);
+        }
+		else
+		{
+            // Button has been moved back up, reset flag
+            pressed = false;
+        }
     }
 }
