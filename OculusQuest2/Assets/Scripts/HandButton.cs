@@ -33,7 +33,7 @@ public class HandButton : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(startPosition);
+        //Debug.Log(startPosition);
         
         if (pressed && !reset)
         {
