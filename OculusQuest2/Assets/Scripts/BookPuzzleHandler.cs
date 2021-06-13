@@ -10,6 +10,11 @@ public class BookPuzzleHandler : MonoBehaviour
     [Space]
     public UnityEvent onPuzzleComplete;
     public UnityEvent onPuzzleFailed;
+    public UnityEvent onBookPulled;
+
+    public Transform drawerTransform;
+    public float openTime;
+    public float openDistance;
 
     List<int> currentOrder = new List<int>();
     List<int> pulledBooks = new List<int>();
@@ -26,6 +31,8 @@ public class BookPuzzleHandler : MonoBehaviour
         
         pulledBooks.Add(index);
         currentOrder.Add(index);
+
+        onBookPulled.Invoke();
 
 
         // If enough books have been pulled, check if the order is correct
@@ -45,6 +52,7 @@ public class BookPuzzleHandler : MonoBehaviour
             if (isCorrectOrder)
             {
                 onPuzzleComplete.Invoke();
+                StartCoroutine(OpenDrawer());
                 this.enabled = false;
             }
 			else
@@ -59,4 +67,19 @@ public class BookPuzzleHandler : MonoBehaviour
 	{
         pulledBooks.Remove(index);
 	}
+
+    private IEnumerator OpenDrawer()
+	{
+        Vector3 start = drawerTransform.position;
+        Vector3 end = start + new Vector3(0, 0, openDistance);
+
+        float t = 0;
+        while (t < openTime)
+		{
+            drawerTransform.position = Vector3.Lerp(start, end, t / openTime);
+
+            t += Time.deltaTime;
+            yield return null;
+		}
+    }
 }
