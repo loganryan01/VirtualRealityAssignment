@@ -16,6 +16,9 @@ public class ClockHandScriptEditor : Editor
     SerializedProperty puzzleTimmer;
     SerializedProperty puzzleThreshold;
     SerializedProperty onPuzzleComplete;
+    SerializedProperty doorTransform;
+    SerializedProperty doorTime;
+    SerializedProperty doorAngle;
 
     SerializedProperty lastRot;
     SerializedProperty smallHandRot;
@@ -33,6 +36,9 @@ public class ClockHandScriptEditor : Editor
         puzzleTimmer = serializedObject.FindProperty("puzzleTimmer");
         puzzleThreshold = serializedObject.FindProperty("puzzleThreshold");
         onPuzzleComplete = serializedObject.FindProperty("onPuzzleComplete");
+        doorTransform = serializedObject.FindProperty("doorTransform");
+        doorTime = serializedObject.FindProperty("doorTime");
+        doorAngle = serializedObject.FindProperty("doorAngle");
 
         lastRot = serializedObject.FindProperty("lastRot");
         smallHandRot = serializedObject.FindProperty("smallHandRot");
@@ -53,6 +59,10 @@ public class ClockHandScriptEditor : Editor
         EditorGUILayout.PropertyField(puzzleTimmer);
         EditorGUILayout.PropertyField(puzzleThreshold);
         EditorGUILayout.PropertyField(onPuzzleComplete);
+        EditorGUILayout.Space();
+        EditorGUILayout.PropertyField(doorTransform);
+        EditorGUILayout.PropertyField(doorTime);
+        EditorGUILayout.PropertyField(doorAngle);
 
         EditorGUILayout.LabelField("Current Big Hand Rotation: " + lastRot.floatValue);
         EditorGUILayout.LabelField("Current Small Hand Rotation: " + smallHandRot.floatValue);

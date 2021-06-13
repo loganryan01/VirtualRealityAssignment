@@ -808,6 +808,9 @@ MonoBehaviour:
   onPuzzleComplete:
     m_PersistentCalls:
       m_Calls: []
+  doorTransform: {fileID: 0}
+  doorTime: 0
+  doorAngle: 0
   lastRot: 0
   smallHandRot: 0
 --- !u!1001 &300795026
@@ -9074,17 +9077,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724553988}
     m_Modifications:
-    - target: {fileID: 881918341370562295, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 1430653924274989782, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
       propertyPath: m_Name
       value: SM_GrandfatherClock
-      objectReference: {fileID: 0}
-    - target: {fileID: 1577556810491440700, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1770306657677324396, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9128,14 +9123,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1770306657677324396, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076733938106175381, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6699240055467409825, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9466,25 +9453,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bd97375d6613d4780a3d2b47f05341, type: 3}
---- !u!1 &6444637210803285674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5076733938106175381, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
-  m_PrefabInstance: {fileID: 2241629312334471487}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &6444637210803285675
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444637210803285674}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7209441942889138295, guid: ec76a547645ef94458a03debdc247f55, type: 3}
 --- !u!1001 &6819788305842908909
 PrefabInstance:
   m_ObjectHideFlags: 0

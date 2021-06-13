@@ -29,6 +29,10 @@ public class ClockHandMovement : MonoBehaviour
     public float puzzleThreshold = 0.1f;
     public UnityEvent onPuzzleComplete;
 
+    public Transform doorTransform;
+    public float doorTime;
+    public float doorAngle;
+
 
     Vector3 axis;
     Vector3 zeroDirection;
@@ -146,6 +150,7 @@ public class ClockHandMovement : MonoBehaviour
                 {
                     // Correct answer, call event and disable clock
                     onPuzzleComplete.Invoke();
+                    StartCoroutine(OpenDoor());
                     rb.isKinematic = true;
                     this.enabled = false;
                 }
@@ -156,5 +161,20 @@ public class ClockHandMovement : MonoBehaviour
             // Reset the timmer
             timmer = 0;
         }
+    }
+
+    private IEnumerator OpenDoor()
+	{
+        Quaternion start = doorTransform.rotation;
+        Quaternion end = doorTransform.rotation * Quaternion.Euler(0, doorAngle, 0);
+
+        float t = 0;
+        while (t < doorTime)
+		{
+            doorTransform.rotation = Quaternion.Slerp(start, end, t / doorTime);
+
+            t += Time.deltaTime;
+            yield return null;
+		}
     }
 }
