@@ -70,7 +70,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087066476825678}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ef5aa93988c2a5e4c89a5aedb5ce0ef3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -83,7 +83,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087066476825678}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ef5aa93988c2a5e4c89a5aedb5ce0ef3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 0
   m_Radius: 0.015
@@ -204,7 +204,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200292382491122}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ef5aa93988c2a5e4c89a5aedb5ce0ef3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -248,7 +248,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237819446708720}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ef5aa93988c2a5e4c89a5aedb5ce0ef3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -571,7 +571,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398406636836058}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ef5aa93988c2a5e4c89a5aedb5ce0ef3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1038,7 +1038,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671039121602088}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ef5aa93988c2a5e4c89a5aedb5ce0ef3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1417,7 +1417,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869784272461842}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ef5aa93988c2a5e4c89a5aedb5ce0ef3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

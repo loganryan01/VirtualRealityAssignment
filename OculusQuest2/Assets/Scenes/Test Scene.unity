@@ -9195,10 +9195,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_PhysicsBallPuzzle
       objectReference: {fileID: 0}
-    - target: {fileID: 3123463233698514186, guid: 6301f1c1c8b5f7244adcd4d8d3d9114b, type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 98693054}
     - target: {fileID: 3229780490104513263, guid: 6301f1c1c8b5f7244adcd4d8d3d9114b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9639842
