@@ -9,7 +9,8 @@ public class MainMenuScript : MonoBehaviour
     
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Use transition manager to go to opening sequence
+        TransitionManager.instance.ChangeScene(2);
     }
 
     public void GoToSettingsMenu()
