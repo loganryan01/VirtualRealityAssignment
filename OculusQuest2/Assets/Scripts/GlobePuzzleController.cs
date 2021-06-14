@@ -67,8 +67,6 @@ public class GlobePuzzleController : MonoBehaviour
             // Check if this was the last answer
             if (correctAnswers == 5)
 			{
-                Debug.Log("Puzzle complete");
-
                 onPuzzleComplete.Invoke();
                 // Disable the buttons
                 foreach (var item in pushedButtons)

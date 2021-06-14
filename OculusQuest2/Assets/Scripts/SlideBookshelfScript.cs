@@ -31,12 +31,9 @@ public class SlideBookshelfScript : MonoBehaviour
         interactable.transform.rotation = bookSocket.transform.rotation;
         interactable.transform.parent = transform;
 
-        //interactable.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-
         Rigidbody rb = interactable.GetComponent<Rigidbody>();
         Destroy(interactable);
         Destroy(rb);
-
 
         // Disable the socket
         bookSocket.socketActive = false;
