@@ -51,10 +51,24 @@ public class KeyholeScript : MonoBehaviour
         rotScript.enabled = true;
         rotScript.onEndAngle.AddListener(OnKeyTurned);
 
-        // Update the tag and attach transform so the hand is placed correctly
+        // Set tag to use hand snapping
         key.tag = "Static Grabbable";
-        key.GetComponent<XRGrabInteractable>().attachTransform = key.transform.GetChild(1); //the second child is the hand position
+        // Destroy the old interactable, and create a new one on the next frame
+        Destroy(key.GetComponent<XRGrabInteractable>());
+        StartCoroutine(AddNewInteractableOnNextFrame());
     }
+    private IEnumerator AddNewInteractableOnNextFrame()
+	{
+        // Wait one frame
+        yield return new WaitForEndOfFrame();
+
+        // Create a non snapping interactable component with the correct attach point
+        NonSnapGrabInteractable newInteractable = key.AddComponent<NonSnapGrabInteractable>();
+        newInteractable.interactionLayerMask = LayerMask.GetMask("Interactable");
+        newInteractable.movementType = XRBaseInteractable.MovementType.VelocityTracking;
+        newInteractable.attachTransform = key.transform.GetChild(1); //the second child is the hand position
+    }
+
 
     // Called when the key has been turned
     private void OnKeyTurned()
