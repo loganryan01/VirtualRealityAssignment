@@ -3181,7 +3181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8317256e7bc49fe4da0bc5a7b274b421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleBookOrder: 0000000001000000020000000300000004000000
+  puzzleBookOrder: 0200000003000000020000000400000000000000
   onPuzzleComplete:
     m_PersistentCalls:
       m_Calls:
