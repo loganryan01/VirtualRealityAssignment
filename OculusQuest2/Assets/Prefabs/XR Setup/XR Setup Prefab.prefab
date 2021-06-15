@@ -2126,9 +2126,10 @@ MonoBehaviour:
   onTeleportActivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 1920941751}
+        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor,
+          Unity.XR.Interaction.Toolkit
+        m_MethodName: set_enableInteractions
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2153,9 +2154,10 @@ MonoBehaviour:
   onTeleportCancel:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 1920941751}
+        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor,
+          Unity.XR.Interaction.Toolkit
+        m_MethodName: set_enableInteractions
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2584,9 +2586,10 @@ MonoBehaviour:
   onTeleportActivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 932791792}
+        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor,
+          Unity.XR.Interaction.Toolkit
+        m_MethodName: set_enableInteractions
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2611,9 +2614,10 @@ MonoBehaviour:
   onTeleportCancel:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 932791792}
+        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor,
+          Unity.XR.Interaction.Toolkit
+        m_MethodName: set_enableInteractions
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

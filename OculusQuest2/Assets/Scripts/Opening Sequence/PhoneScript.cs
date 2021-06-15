@@ -13,11 +13,15 @@ public class PhoneScript : MonoBehaviour
     public AudioSource phoneCallClip;
 
 
+    XRGrabInteractable interactable;
+
+
 
     void Start()
     {
+        interactable = GetComponent<XRGrabInteractable>();
         // Add listener to when the phone is grabbed
-        GetComponent<XRGrabInteractable>().onSelectEntered.AddListener(OnPickUp);
+        interactable.onSelectEntered.AddListener(OnPickUp);
     }
 
     // Called when the phone is picked up
@@ -30,6 +34,9 @@ public class PhoneScript : MonoBehaviour
         }
 
         StartCoroutine(WaitDelay());
+
+        // Remove this as a listener
+        interactable.onSelectEntered.RemoveListener(OnPickUp);
     }
 
     private IEnumerator WaitDelay()
