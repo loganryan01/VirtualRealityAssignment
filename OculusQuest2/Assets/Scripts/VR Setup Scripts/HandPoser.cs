@@ -32,6 +32,9 @@ public class HandPoser : MonoBehaviour
     public Transform physicalController;
     public Transform handTrans;
 
+    public Transform teleportAttachPoint;
+    private Vector3 teleportPointPosition;
+
 
 
     void Start()
@@ -40,6 +43,9 @@ public class HandPoser : MonoBehaviour
         XRDirectInteractor interactor = GetComponentInChildren<XRDirectInteractor>();
         interactor.onSelectEntered.AddListener(OnGrab);
         interactor.onSelectExited.AddListener(OnDrop);
+
+        // Save the position on the attach point
+        teleportPointPosition = teleportAttachPoint.localPosition;
     }
 
     void Update()
@@ -79,6 +85,9 @@ public class HandPoser : MonoBehaviour
                 indexEndCollider.enabled = false;
                 indexFingerCollider.enabled = true;
             }
+
+            // When enabling a ray interactor, its attach point gets reset, so set it again
+            teleportAttachPoint.localPosition = teleportPointPosition;
         }
         else
         {
