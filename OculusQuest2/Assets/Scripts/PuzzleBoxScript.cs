@@ -41,6 +41,11 @@ public class PuzzleBoxScript : MonoBehaviour
     // Called when a puzzle piece has been placed
 	private void OnPuzzlePiecePlaced(XRBaseInteractable interactable, XRSocketInteractor socket, int correctPuzzlePiece)
 	{
+        if (interactable == null)
+        {
+            return;
+        }
+
         // Snap the puzzle piece to the socket imediatly
         interactable.transform.position = socket.transform.position;
         interactable.transform.rotation = socket.transform.rotation;
@@ -62,7 +67,7 @@ public class PuzzleBoxScript : MonoBehaviour
     private void OnPieceRemoved(XRBaseInteractable interactable, int correctPuzzlePiece)
     {
         // If the piece was correct, remove it from the list
-        if (interactable.name == "Puzzle Piece " + correctPuzzlePiece.ToString())
+        if (interactable != null && interactable.name == "Puzzle Piece " + correctPuzzlePiece.ToString())
         {
             correctPuzzlePieces.Remove(interactable);
         }

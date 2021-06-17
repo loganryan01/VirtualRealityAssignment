@@ -5446,6 +5446,14 @@ PrefabInstance:
       propertyPath: interactables.Array.data[1]
       value: 
       objectReference: {fileID: 1628730889}
+    - target: {fileID: 2241629313627641854, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
+      propertyPath: puzzleMinute
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241629313627641854, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
+      propertyPath: puzzleHour
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 4309150967205745766, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -54.339
