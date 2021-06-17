@@ -29,6 +29,28 @@ public class SettingsMenu : MonoBehaviour
 
     public void Start()
     {
+        GameObject xrPrefab = GameObject.Find("XR Setup Prefab");
+
+        if (teleportationProvider == null)
+        {
+            teleportationProvider = xrPrefab.GetComponentInChildren<TeleportationProvider>();
+        }
+
+        if (continuousMoveProvider == null)
+        {
+            continuousMoveProvider = xrPrefab.GetComponentInChildren<ActionBasedContinuousMoveProvider>();
+        }
+
+        if (snapTurnProvider == null)
+        {
+            snapTurnProvider = xrPrefab.GetComponentInChildren<ActionBasedSnapTurnProvider>();
+        }
+
+        if (continuousTurnProvider == null)
+        {
+            continuousTurnProvider = xrPrefab.GetComponentInChildren<ActionBasedContinuousTurnProvider>();
+        }
+
         string controls = PlayerPrefs.GetString("Controls");
         string rotationControls = PlayerPrefs.GetString("Rotation");
 
@@ -65,52 +87,44 @@ public class SettingsMenu : MonoBehaviour
 
     public void EnableTeleportation()
     {
-        if (teleportationToggle.isOn && !continuousToggle.isOn)
+        if (teleportationToggle.isOn)
         {
             teleportationProvider.enabled = true;
             continuousMoveProvider.enabled = false;
-        }
-        else if (!teleportationToggle.isOn && !continuousToggle.isOn)
-        {
-            teleportationToggle.isOn = true;
 
-            teleportationProvider.enabled = true;
-            continuousMoveProvider.enabled = false;
-        }
-        else if (teleportationToggle.isOn && continuousToggle.isOn)
-        {
-            continuousToggle.isOn = false;
+            if (!teleportationToggle.isOn && !continuousToggle.isOn)
+            {
+                teleportationToggle.isOn = true;
+            }
+            else if (teleportationToggle.isOn && continuousToggle.isOn)
+            {
+                continuousToggle.isOn = false;
+            }
 
-            teleportationProvider.enabled = true;
-            continuousMoveProvider.enabled = false;
+            PlayerPrefs.SetString("Controls", "Teleportation");
+            Debug.Log(PlayerPrefs.GetString("Controls"));
         }
-        
-        PlayerPrefs.SetString("Controls", "Teleportation");
     }
 
     public void EnableContinuous()
     {
-        if (continuousToggle.isOn && !teleportationToggle.isOn)
+        if (continuousToggle.isOn)
         {
             teleportationProvider.enabled = false;
             continuousMoveProvider.enabled = true;
-        }
-        else if (!teleportationToggle.isOn && !continuousToggle.isOn)
-        {
-            continuousToggle.isOn = true;
 
-            teleportationProvider.enabled = false;
-            continuousMoveProvider.enabled = true;
-        }
-        else if (teleportationToggle.isOn && continuousToggle.isOn)
-        {
-            teleportationToggle.isOn = false;
+            if (!teleportationToggle.isOn && !continuousToggle.isOn)
+            {
+                continuousToggle.isOn = true;
+            }
+            else if (teleportationToggle.isOn && continuousToggle.isOn)
+            {
+                teleportationToggle.isOn = false;
+            }
 
-            teleportationProvider.enabled = false;
-            continuousMoveProvider.enabled = true;
+            PlayerPrefs.SetString("Controls", "Continuous");
+            Debug.Log(PlayerPrefs.GetString("Controls"));
         }
-
-        PlayerPrefs.SetString("Controls", "Continuous");
     }
 
     public void EnableSnapTurn()
