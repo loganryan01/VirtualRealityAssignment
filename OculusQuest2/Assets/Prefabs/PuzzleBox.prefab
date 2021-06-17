@@ -748,12 +748,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleSockets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2166465451481788477}
+  - {fileID: 1934534213}
+  - {fileID: 1947473573}
+  - {fileID: 187068985}
+  - {fileID: 841873318}
+  - {fileID: 1987159518}
   gemSocket: {fileID: 2372897659516734040}
   boxLid: {fileID: 7171472229387785648}
   openTime: 3
