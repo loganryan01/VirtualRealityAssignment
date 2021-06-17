@@ -100,7 +100,7 @@ public class KeyholeScript : MonoBehaviour
         while (t < time)
 		{
             // Rotate the case door over time
-            caseDoor.rotation = startRot * Quaternion.Euler(0, 0, angle * (t / time));
+            caseDoor.rotation = startRot * Quaternion.Euler(0, angle * (t / time), 0);
 
             t += Time.deltaTime;
             yield return null;

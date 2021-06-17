@@ -494,7 +494,7 @@ AudioSource:
   m_GameObject: {fileID: 4011858997826870140}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
   m_audioClip: {fileID: 8300000, guid: 010cc76883aa1f240ad2ed5dad92a7a8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5644,7 +5644,7 @@ MonoBehaviour:
   onUnlocked:
     m_PersistentCalls:
       m_Calls: []
-  caseDoor: {fileID: 0}
+  caseDoor: {fileID: 4967889307891481330}
   time: 1
   angle: 140
 --- !u!1 &4011858998655763140
@@ -5752,7 +5752,7 @@ AudioSource:
   m_GameObject: {fileID: 4011858998655763140}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
   m_audioClip: {fileID: 8300000, guid: 010cc76883aa1f240ad2ed5dad92a7a8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -6224,6 +6224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0c4a28785a8b0c4d8024b8f50356df1, type: 3}
+--- !u!4 &4967889307891481330 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -910429155886764072, guid: e0c4a28785a8b0c4d8024b8f50356df1, type: 3}
+  m_PrefabInstance: {fileID: 4011858997087884586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3469537519972758209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e0c4a28785a8b0c4d8024b8f50356df1, type: 3}

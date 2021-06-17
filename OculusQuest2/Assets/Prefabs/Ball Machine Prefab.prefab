@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0402bde673e3878439d5e7ff01d468b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   socket: {fileID: 7349438427980410995}
   onBallPlaced:
     m_PersistentCalls:
@@ -351,7 +352,7 @@ AudioSource:
   m_GameObject: {fileID: 5937336974473743649}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
   m_audioClip: {fileID: 8300000, guid: c507dc46c12b41c4f95ba8ab87536f52, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871e4f89322f52348b9cfe8915bf5d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 0}
+  interactable: {fileID: 6041339834924327117}
   drawer: {fileID: 2140159353467259274}
   openTime: 1
   openDistance: 0.3
@@ -736,7 +736,7 @@ AudioSource:
   m_GameObject: {fileID: 6705079271040606488}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3f069f65e2e89454685a318fa32b40c6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1021,6 +1021,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2140159353467259274}
     m_Modifications:
+    - target: {fileID: 1291936672, guid: d5c989ab0a457be42a342df0c37756d4, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
     - target: {fileID: 313777261772218539, guid: d5c989ab0a457be42a342df0c37756d4, type: 3}
       propertyPath: m_Name
       value: Puzzle Piece 6
@@ -1092,3 +1096,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3603331709574173368, guid: d5c989ab0a457be42a342df0c37756d4, type: 3}
   m_PrefabInstance: {fileID: 1903762220473625257}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6041339834924327117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5313301110100281956, guid: d5c989ab0a457be42a342df0c37756d4, type: 3}
+  m_PrefabInstance: {fileID: 1903762220473625257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

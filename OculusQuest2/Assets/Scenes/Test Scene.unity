@@ -1137,6 +1137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cabinet
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 61fca23ceff1db643b1d8cd005913219, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1366187267284113452, guid: 61fca23ceff1db643b1d8cd005913219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5120,14 +5124,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cabinet
       objectReference: {fileID: 0}
-    - target: {fileID: 1870882016030121844, guid: cccc5c066ac832c48be33df9599850da, type: 3}
-      propertyPath: interactable
-      value: 
-      objectReference: {fileID: 1903762221496977721}
-    - target: {fileID: 1903762221496977673, guid: cccc5c066ac832c48be33df9599850da, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
     - target: {fileID: 2153069003946272762, guid: cccc5c066ac832c48be33df9599850da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.692
@@ -5172,10 +5168,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7277822160355245018, guid: cccc5c066ac832c48be33df9599850da, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cccc5c066ac832c48be33df9599850da, type: 3}
 --- !u!114 &1903762221496977720 stripped
@@ -5187,17 +5179,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 871e4f89322f52348b9cfe8915bf5d8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1903762221496977721 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6041339834924327117, guid: cccc5c066ac832c48be33df9599850da, type: 3}
-  m_PrefabInstance: {fileID: 1903762221496977719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1929919893030083539
@@ -5829,14 +5810,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724553988}
     m_Modifications:
-    - target: {fileID: 3673845665442759898, guid: 572aa428d75697844a9a64c2335cbc8e, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
-    - target: {fileID: 5588579029041658158, guid: 572aa428d75697844a9a64c2335cbc8e, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5937336974473743649, guid: 572aa428d75697844a9a64c2335cbc8e, type: 3}
       propertyPath: m_Name
       value: SM_BallMachine
@@ -5898,14 +5871,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724553988}
     m_Modifications:
-    - target: {fileID: 997800596, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
-    - target: {fileID: 1299256877, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
     - target: {fileID: 3469537519311568337, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.699
@@ -5949,10 +5914,6 @@ PrefabInstance:
     - target: {fileID: 3469537519311568337, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4011858997782633023, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4011858998518544167, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
       propertyPath: gem
