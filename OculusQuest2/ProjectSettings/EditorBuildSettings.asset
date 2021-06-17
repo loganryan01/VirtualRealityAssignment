@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OpeningSequence.unity
     guid: 7a4cbf8a9ff5f1a4e8e3fcaf88b26ad4
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Test Scene.unity
+    guid: 2ced1640419e28a40b27ff788f714d57
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 2baa7311fd76ad645b5f0a41f2fa01f8

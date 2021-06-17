@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TransitionManager : MonoBehaviour
 {
@@ -14,7 +15,14 @@ public class TransitionManager : MonoBehaviour
     public float fadeTime;
 
     public CustomDirectInteractor[] interactors;
-    
+
+    public XRInteractorLineVisual[] lineVisuals;
+
+    public float menuLength;
+    public AnimationCurve menuWidth;
+    public Gradient menuValidColor;
+    public Gradient menuInvalidColor;
+
 
     // The currently loaded scene
     Scene currentScene;
@@ -23,16 +31,43 @@ public class TransitionManager : MonoBehaviour
 
     bool isLoading = false;
 
+    // Should the line visuals to set to use menu values?
+    bool useMenuValues = false;
+
+    // Stored line visual values
+    float[] length = new float[2];
+    AnimationCurve[] width = new AnimationCurve[2];
+    Gradient[] validColor = new Gradient[2];
+    Gradient[] invalidColor = new Gradient[2];
+
 
 
     void Awake()
     {
         instance = this;
 
+        // Store default values for line visuals
+        for (int i = 0; i < lineVisuals.Length; i++)
+        {
+            length[i] = lineVisuals[i].lineLength;
+            width[i] = lineVisuals[i].widthCurve;
+            validColor[i] = lineVisuals[i].validColorGradient;
+            invalidColor[i] = lineVisuals[i].invalidColorGradient;
+        }
+
         // If there are less than 2 scenes loaded, load the main menu
         if (SceneManager.sceneCount < 2)
         {
             SceneManager.LoadScene(1, LoadSceneMode.Additive);
+
+            // Set line visuals to use menu values
+            for (int i = 0; i < lineVisuals.Length; i++)
+            {
+                lineVisuals[i].lineLength = menuLength;
+                lineVisuals[i].widthCurve = menuWidth;
+                lineVisuals[i].validColorGradient = menuValidColor;
+                lineVisuals[i].invalidColorGradient = menuInvalidColor;
+            }
         }
     }
     void Start()
@@ -52,6 +87,7 @@ public class TransitionManager : MonoBehaviour
             return;
         }
         isLoading = true;
+        useMenuValues = sceneName == "MainMenu";
 
         // Start fading out
         StartCoroutine(FadeOut(fadeImage));
@@ -74,6 +110,7 @@ public class TransitionManager : MonoBehaviour
             return;
         }
         isLoading = true;
+        useMenuValues = sceneIndex == 1;
 
         // Start fading out
         StartCoroutine(FadeOut(fadeImage));
@@ -108,6 +145,16 @@ public class TransitionManager : MonoBehaviour
         {
             interactor.ResetValidTargets();
         }
+
+        // Set line visuals to use correct values
+        for (int i = 0; i < lineVisuals.Length; i++)
+        {
+            lineVisuals[i].lineLength = useMenuValues ? menuLength : length[i];
+            lineVisuals[i].widthCurve = useMenuValues ? menuWidth : width[i];
+            lineVisuals[i].validColorGradient = useMenuValues ? menuValidColor : validColor[i];
+            lineVisuals[i].invalidColorGradient = useMenuValues ? menuInvalidColor : invalidColor[i];
+        }
+
 
         // Get the new scene and set it as the active scene
         currentScene = SceneManager.GetSceneAt(1);
