@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class CabnetScript : MonoBehaviour
 {
+    public XRGrabInteractable interactable;
+
     public Transform drawer;
     public float openTime;
     public float openDistance;
@@ -19,6 +22,8 @@ public class CabnetScript : MonoBehaviour
     {
         if (!hasBeenOpened)
         {
+            interactable.interactionLayerMask |= LayerMask.GetMask("interactables");
+
             audioSource.Play();
             StartCoroutine(OpenDrawerReal());
             hasBeenOpened = true;

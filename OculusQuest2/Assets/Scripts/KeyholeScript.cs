@@ -6,6 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class KeyholeScript : MonoBehaviour
 {
+    public XRGrabInteractable gem;
+
     // Where the key should be after being placed
     public Transform keyLockTransform;
    
@@ -73,6 +75,9 @@ public class KeyholeScript : MonoBehaviour
     // Called when the key has been turned
     private void OnKeyTurned()
 	{
+        // Enable the gem
+        gem.interactionLayerMask |= LayerMask.GetMask("Interactable");
+
         // Disable interaction on the key and stop it from moving
         key.GetComponent<XRGrabInteractable>().interactionLayerMask = 0;
         Rigidbody rigid = key.GetComponent<Rigidbody>();

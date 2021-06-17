@@ -278,6 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62851951f290b8f4f9fa1ab57de7f391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactables:
+  - {fileID: 0}
+  - {fileID: 0}
   globeTop: {fileID: 8133515265524399683}
   openTime: 2
   angle: -35

@@ -6,6 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PuzzleBoxScript : MonoBehaviour
 {
+    public XRGrabInteractable[] interactables;
+
     public XRSocketInteractor[] puzzleSockets;
     [Space]
     public XRSocketInteractor gemSocket;
@@ -88,6 +90,12 @@ public class PuzzleBoxScript : MonoBehaviour
     // Called when the gem and all puzzle pieces have been placed
     private void OnPuzzleComplete()
 	{
+        // Enable the objects
+        foreach (var inter in interactables)
+        {
+            inter.interactionLayerMask |= LayerMask.GetMask("interactables");
+        }
+
         // Disable all sockets
         foreach (XRSocketInteractor socket in puzzleSockets)
         {

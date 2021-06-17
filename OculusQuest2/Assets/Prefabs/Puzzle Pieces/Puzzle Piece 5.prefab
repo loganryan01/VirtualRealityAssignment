@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 16896
+    m_Bits: 16384
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []

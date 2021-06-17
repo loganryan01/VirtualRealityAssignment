@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871e4f89322f52348b9cfe8915bf5d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   drawer: {fileID: 2140159353467259274}
   openTime: 1
   openDistance: 0.3
@@ -1079,6 +1080,10 @@ PrefabInstance:
     - target: {fileID: 3603331709574173368, guid: d5c989ab0a457be42a342df0c37756d4, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2135922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313301110100281956, guid: d5c989ab0a457be42a342df0c37756d4, type: 3}
+      propertyPath: m_InteractionLayerMask.m_Bits
+      value: 16384
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5c989ab0a457be42a342df0c37756d4, type: 3}

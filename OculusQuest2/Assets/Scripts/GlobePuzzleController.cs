@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GlobePuzzleController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GlobePuzzleController : MonoBehaviour
         - if the first button has been pushed then leave it down
         - if the player gets the 2nd button incorrect then reset the puzzle
     */
+    public XRGrabInteractable[] interactables;
 
     public Transform globeTop;
     public float openTime;
@@ -67,6 +69,12 @@ public class GlobePuzzleController : MonoBehaviour
             // Check if this was the last answer
             if (correctAnswers == 5)
 			{
+                // Enable interactables
+                foreach (var inter in interactables)
+                {
+                    inter.interactionLayerMask |= LayerMask.GetMask("interactables");
+                }
+
                 onPuzzleComplete.Invoke();
                 // Disable the buttons
                 foreach (var item in pushedButtons)
