@@ -10,11 +10,10 @@ public class BallMachineScript : MonoBehaviour
 
     public UnityEvent onBallPlaced;
 
-
-    // Temp stuff untill proper assetes are added
-    public GameObject puzzlePiecePrefab;
-    public Transform spawnPoint;
-    public float spawnDelay;
+    public Transform door;
+    public float openDelay;
+    public float openTime;
+    public float openAngle;
     
 
 
@@ -34,16 +33,23 @@ public class BallMachineScript : MonoBehaviour
         onBallPlaced.Invoke();
 
 
-        StartCoroutine(SpawnPuzzlePiece());
+        StartCoroutine(OpenDoor());
     }
 
-    // Temp code untill proper assets are added
-    private IEnumerator SpawnPuzzlePiece()
+    private IEnumerator OpenDoor()
 	{
-        yield return new WaitForSeconds(spawnDelay);
+        yield return new WaitForSeconds(openDelay);
 
-        GameObject obj = Instantiate(puzzlePiecePrefab, spawnPoint.position, spawnPoint.rotation);
-        // Fix the name so it will go into the socket
-        obj.name = "Puzzle Piece 5";
+        Quaternion start = door.rotation;
+        Quaternion end = start * Quaternion.Euler(0, openAngle, 0);
+
+        float t = 0;
+        while (t < openTime)
+        {
+            door.rotation = Quaternion.Slerp(start, end, t / openTime);
+
+            t += Time.deltaTime;
+            yield return null;
+        }
 	}
 }
