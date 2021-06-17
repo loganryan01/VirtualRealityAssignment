@@ -87,42 +87,44 @@ public class SettingsMenu : MonoBehaviour
 
     public void EnableTeleportation()
     {
+        if (!continuousToggle.isOn && !teleportationToggle.isOn)
+        {
+            teleportationToggle.isOn = true;
+        }
+        else if (teleportationToggle.isOn && continuousToggle.isOn)
+        {
+            continuousToggle.isOn = false;
+        }
+
+        teleportationProvider.enabled = true;
+        continuousMoveProvider.enabled = false;
+
+        PlayerPrefs.SetString("Controls", "Teleportation");
+
         if (teleportationToggle.isOn)
         {
-            teleportationProvider.enabled = true;
-            continuousMoveProvider.enabled = false;
-
-            if (!teleportationToggle.isOn && !continuousToggle.isOn)
-            {
-                teleportationToggle.isOn = true;
-            }
-            else if (teleportationToggle.isOn && continuousToggle.isOn)
-            {
-                continuousToggle.isOn = false;
-            }
-
-            PlayerPrefs.SetString("Controls", "Teleportation");
             Debug.Log(PlayerPrefs.GetString("Controls"));
         }
     }
 
     public void EnableContinuous()
     {
+        if (!continuousToggle.isOn && !teleportationToggle.isOn)
+        {
+            continuousToggle.isOn = true;
+        }
+        else if (teleportationToggle.isOn && continuousToggle.isOn)
+        {
+            teleportationToggle.isOn = false;
+        }
+
+        teleportationProvider.enabled = false;
+        continuousMoveProvider.enabled = true;
+
+        PlayerPrefs.SetString("Controls", "Continuous");
+
         if (continuousToggle.isOn)
         {
-            teleportationProvider.enabled = false;
-            continuousMoveProvider.enabled = true;
-
-            if (!teleportationToggle.isOn && !continuousToggle.isOn)
-            {
-                continuousToggle.isOn = true;
-            }
-            else if (teleportationToggle.isOn && continuousToggle.isOn)
-            {
-                teleportationToggle.isOn = false;
-            }
-
-            PlayerPrefs.SetString("Controls", "Continuous");
             Debug.Log(PlayerPrefs.GetString("Controls"));
         }
     }

@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5957393556702707983, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+      propertyPath: leftTeleportController
+      value: 
+      objectReference: {fileID: 1950877787}
+    - target: {fileID: 5957393556702707983, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+      propertyPath: rightTeleportController
+      value: 
+      objectReference: {fileID: 1367327303}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
 --- !u!1 &230403913
@@ -324,6 +332,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1367327303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4518450466696791075, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+  m_PrefabInstance: {fileID: 218244164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1920941751 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1920941751, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
@@ -335,3 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2be64e16818756479f430a0ba85022f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1950877787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3339806268828883261, guid: 455a52614b6441f4a8ba4e860f3c0fc0, type: 3}
+  m_PrefabInstance: {fileID: 218244164}
+  m_PrefabAsset: {fileID: 0}

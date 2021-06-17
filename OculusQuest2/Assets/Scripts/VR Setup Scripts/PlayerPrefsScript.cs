@@ -34,8 +34,8 @@ public class PlayerPrefsScript : MonoBehaviour
             teleportationProvider.enabled = false;
             continuousMoveProvider.enabled = true;
 
-            leftTeleportController.SetActive(false);
-            rightTeleportController.SetActive(false);
+            //leftTeleportController.SetActive(false);
+            //rightTeleportController.SetActive(false);
 
             continuousMovement = true;
         }

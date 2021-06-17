@@ -77,7 +77,7 @@ public class HandPoser : MonoBehaviour
 
 
         // If using teleportation and the action has been started
-        if (isUsingTeleport && teleportCancelReference.action.phase == InputActionPhase.Started)
+        if (teleportCancelReference.action.phase == InputActionPhase.Started)
         {
             onTeleportActivate.Invoke();
             if (indexEndCollider != null && indexFingerCollider != null)
