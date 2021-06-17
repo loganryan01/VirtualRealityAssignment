@@ -10,7 +10,8 @@ public class PhoneScript : MonoBehaviour
 
     public float waitTime;
 
-    public AudioSource phoneCallClip;
+    public AudioSource audioSource;
+    public AudioClip dialogue;
 
 
     XRGrabInteractable interactable;
@@ -28,9 +29,15 @@ public class PhoneScript : MonoBehaviour
     private void OnPickUp(XRBaseInteractor interactor)
 	{
         // Play audio clip
-        if (phoneCallClip != null)
+        if (audioSource != null)
 		{
-            phoneCallClip.Play();
+            // Set new properties
+            audioSource.loop = false;
+            audioSource.playOnAwake = false;
+            audioSource.Stop();
+            // Set the dialogue and play it
+            audioSource.clip = dialogue;
+            audioSource.Play();
         }
 
         StartCoroutine(WaitDelay());

@@ -534,7 +534,8 @@ MonoBehaviour:
   door: {fileID: 948646708}
   doorLight: {fileID: 1836275755}
   waitTime: 7
-  phoneCallClip: {fileID: 665177098}
+  audioSource: {fileID: 665177098}
+  dialogue: {fileID: 8300000, guid: fdd9d59ac7a644146ab207ecd10b59db, type: 3}
 --- !u!82 &665177098
 AudioSource:
   m_ObjectHideFlags: 0
@@ -545,11 +546,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fdd9d59ac7a644146ab207ecd10b59db, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 621b4621e997e984b99cbe41e147d861, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
