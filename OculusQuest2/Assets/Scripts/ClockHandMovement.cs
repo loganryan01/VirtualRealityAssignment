@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ClockHandMovement : MonoBehaviour
 {
+    public XRGrabInteractable[] interactables;
+
     public enum Axis
     {
         X,
@@ -148,6 +151,12 @@ public class ClockHandMovement : MonoBehaviour
                 if (puzzleMinute >= lastRot - puzzleThreshold && puzzleMinute <= lastRot + puzzleThreshold && 
                     puzzleHour >= smallHandRot - puzzleThreshold && puzzleHour <= smallHandRot + puzzleThreshold)
                 {
+                    // Enable the objects
+                    foreach (var inter in interactables)
+                    {
+                        inter.interactionLayerMask |= LayerMask.GetMask("interactables");
+                    }
+
                     // Correct answer, call event and disable clock
                     onPuzzleComplete.Invoke();
                     StartCoroutine(OpenDoor());

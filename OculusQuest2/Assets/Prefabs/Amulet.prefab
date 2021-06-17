@@ -194,7 +194,7 @@ MonoBehaviour:
   - {fileID: 1857543474}
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []

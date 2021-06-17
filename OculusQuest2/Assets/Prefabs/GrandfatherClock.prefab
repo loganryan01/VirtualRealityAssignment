@@ -887,7 +887,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 16384
   m_AttachTransform: {fileID: 856700372018634269}
   m_StartingSelectedInteractable: {fileID: 0}
   m_OnHoverEntered:
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
   m_AttachTransform: {fileID: 7653345963518246278}
   m_StartingSelectedInteractable: {fileID: 0}
   m_OnHoverEntered:
@@ -1765,7 +1765,7 @@ GameObject:
   - component: {fileID: 2241629313627641852}
   - component: {fileID: 2241629313627641853}
   - component: {fileID: 2241629313627641854}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Minute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1876,6 +1876,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5937a5349f0ba3489a3de3f06b1e099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactables:
+  - {fileID: 0}
+  - {fileID: 0}
   rotationAxis: 0
   numberOfPoints: 12
   correctionStrength: 5

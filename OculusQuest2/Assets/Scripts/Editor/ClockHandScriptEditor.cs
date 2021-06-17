@@ -6,6 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(ClockHandMovement))]
 public class ClockHandScriptEditor : Editor
 {
+    SerializedProperty interactables;
     SerializedProperty numberOfPoints;
     SerializedProperty rotationAxis;
     SerializedProperty correctionStrength;
@@ -39,6 +40,7 @@ public class ClockHandScriptEditor : Editor
         doorTransform = serializedObject.FindProperty("doorTransform");
         doorTime = serializedObject.FindProperty("doorTime");
         doorAngle = serializedObject.FindProperty("doorAngle");
+        interactables = serializedObject.FindProperty("interactables");
 
         lastRot = serializedObject.FindProperty("lastRot");
         smallHandRot = serializedObject.FindProperty("smallHandRot");
@@ -48,6 +50,7 @@ public class ClockHandScriptEditor : Editor
     {
         serializedObject.Update();
 
+        EditorGUILayout.PropertyField(interactables);
         EditorGUILayout.PropertyField(numberOfPoints);
         EditorGUILayout.PropertyField(rotationAxis);
         EditorGUILayout.PropertyField(correctionStrength);

@@ -6,6 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class BallMachineScript : MonoBehaviour
 {
+    public XRGrabInteractable interactable;
+
     public XRSocketInteractor socket;
 
     public UnityEvent onBallPlaced;
@@ -25,6 +27,9 @@ public class BallMachineScript : MonoBehaviour
     // Called when the ball is placed in the socket
     private void OnBallPlaced(XRBaseInteractable interactable)
 	{
+        // Enable the object
+        interactable.interactionLayerMask |= LayerMask.GetMask("interactables");
+
         // Disable the socket and delete the ball
         socket.socketActive = false;
         interactable.gameObject.SetActive(false);

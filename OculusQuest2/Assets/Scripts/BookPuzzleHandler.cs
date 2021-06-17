@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BookPuzzleHandler : MonoBehaviour
 {
+    public XRGrabInteractable[] interactables;
+
     // Order to pull books in using their index
     public int[] puzzleBookOrder;
     [Space]
@@ -51,6 +54,12 @@ public class BookPuzzleHandler : MonoBehaviour
 
             if (isCorrectOrder)
             {
+                // Enable the objects
+                foreach (var inter in interactables)
+                {
+                    inter.interactionLayerMask |= LayerMask.GetMask("interactables");
+                }
+
                 onPuzzleComplete.Invoke();
                 StartCoroutine(OpenDrawer());
                 this.enabled = false;
