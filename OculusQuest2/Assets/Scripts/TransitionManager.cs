@@ -146,12 +146,13 @@ public class TransitionManager : MonoBehaviour
     private IEnumerator FadeOut(Image fadeImage)
 	{
         // Activate fade image
-        fadeImage.enabled = true;
+        //fadeImage.enabled = true;
 
         float t = 0;
         while (t < fadeTime)
 		{
-            fadeImage.color = Color.Lerp(Color.clear, Color.black, t / fadeTime);
+            //fadeImage.color = Color.Lerp(Color.clear, Color.black, t / fadeTime);
+            Unity.XR.Oculus.Utils.SetColorScaleAndOffset(Color.Lerp(Color.clear, Color.black, t / fadeTime), Vector4.zero);
 
             t += Time.deltaTime;
             yield return null;
@@ -160,18 +161,19 @@ public class TransitionManager : MonoBehaviour
     private IEnumerator FadeIn(Image fadeImage)
 	{
         // Activate fade image
-        fadeImage.enabled = true;
+        //fadeImage.enabled = true;
 
         float t = 0;
         while (t < fadeTime)
         {
-            fadeImage.color = Color.Lerp(Color.black, Color.clear, t / fadeTime);
+            //fadeImage.color = Color.Lerp(Color.black, Color.clear, t / fadeTime);
+            Unity.XR.Oculus.Utils.SetColorScaleAndOffset(Color.Lerp(Color.black, Color.clear, t / fadeTime), Vector4.zero);
 
             t += Time.deltaTime;
             yield return null;
         }
 
         // Deactivate fade image
-        fadeImage.enabled = false;
+        //fadeImage.enabled = false;
     }
 }
