@@ -213,8 +213,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4131925, y: 1.707796, z: 0.116280645}
-  m_Center: {x: 0, y: 0.000000059604645, z: 0.0000000018626451}
+  m_Size: {x: 2.4886699, y: 1.6085014, z: 0.116280645}
+  m_Center: {x: 0, y: -0.6267836, z: 0}
 --- !u!114 &8518276682356480686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,4 +236,16 @@ MonoBehaviour:
       m_Calls: []
   onEndAngle:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CabnetScript, Assembly-CSharp
+        m_MethodName: OpenDrawer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
