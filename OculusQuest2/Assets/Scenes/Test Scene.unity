@@ -855,7 +855,7 @@ Transform:
   - {fileID: 718701940}
   - {fileID: 1652595261}
   m_Father: {fileID: 724553988}
-  m_RootOrder: 19
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &166605937
 GameObject:
@@ -1875,7 +1875,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 724553988}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &545157351
 AudioSource:
@@ -2901,7 +2901,7 @@ Transform:
   - {fileID: 1764284057418781169}
   - {fileID: 7090679288800899407}
   m_Father: {fileID: 724553988}
-  m_RootOrder: 42
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653260035
 GameObject:
@@ -3265,8 +3265,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1837678312}
   - {fileID: 545157350}
+  - {fileID: 1837678312}
+  - {fileID: 151019984}
   - {fileID: 137633867}
   - {fileID: 1028825720}
   - {fileID: 543450651801227603}
@@ -3284,20 +3285,20 @@ Transform:
   - {fileID: 1915338037}
   - {fileID: 789423841}
   - {fileID: 1589785442}
-  - {fileID: 151019984}
+  - {fileID: 1635032647}
   - {fileID: 399955780}
   - {fileID: 543450652997333166}
   - {fileID: 623874640}
   - {fileID: 2113137013}
   - {fileID: 543450653188288205}
   - {fileID: 511740199}
-  - {fileID: 1635032647}
   - {fileID: 822754613}
   - {fileID: 1724367580}
   - {fileID: 1608420537}
   - {fileID: 275319042}
   - {fileID: 2105989108}
   - {fileID: 1164172224}
+  - {fileID: 643794299}
   - {fileID: 39654227}
   - {fileID: 1854241446}
   - {fileID: 1382710681}
@@ -3307,7 +3308,6 @@ Transform:
   - {fileID: 1219655645}
   - {fileID: 1739297972}
   - {fileID: 284523057}
-  - {fileID: 643794299}
   - {fileID: 1474749597}
   - {fileID: 237726425}
   - {fileID: 690282513}
@@ -4014,8 +4014,8 @@ MonoBehaviour:
   - {fileID: 1628730889}
   rotationAxis: 0
   numberOfPoints: 12
-  correctionStrength: 5
-  counterTorqueStrength: 5
+  correctionStrength: 1
+  counterTorqueStrength: 0.2
   smallHand: {fileID: 1028825722}
   puzzleMinute: 15
   puzzleHour: 1
@@ -6120,7 +6120,7 @@ Transform:
   - {fileID: 110508630}
   - {fileID: 722213708}
   m_Father: {fileID: 724553988}
-  m_RootOrder: 26
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652595260
 GameObject:
