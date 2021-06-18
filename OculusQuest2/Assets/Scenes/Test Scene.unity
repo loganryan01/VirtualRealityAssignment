@@ -8410,10 +8410,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cabinet
       objectReference: {fileID: 0}
-    - target: {fileID: 1870882016030121844, guid: cccc5c066ac832c48be33df9599850da, type: 3}
-      propertyPath: interactable
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1903762221496977673, guid: cccc5c066ac832c48be33df9599850da, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -9518,6 +9514,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5962738680485911293, guid: 572aa428d75697844a9a64c2335cbc8e, type: 3}
       propertyPath: interactable
+      value: 
+      objectReference: {fileID: 754122767}
+    - target: {fileID: 5962738680485911293, guid: 572aa428d75697844a9a64c2335cbc8e, type: 3}
+      propertyPath: puzzlePiece
       value: 
       objectReference: {fileID: 754122767}
     - target: {fileID: 6426205839047825307, guid: 572aa428d75697844a9a64c2335cbc8e, type: 3}
