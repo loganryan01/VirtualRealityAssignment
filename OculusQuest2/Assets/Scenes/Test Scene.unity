@@ -9236,6 +9236,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3992114629997868991, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65fb759da2b0ca84eb5382e2f614d7a7, type: 2}
+    - target: {fileID: 7711006078690955507, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65fb759da2b0ca84eb5382e2f614d7a7, type: 2}
+    - target: {fileID: 8888690650505236193, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65fb759da2b0ca84eb5382e2f614d7a7, type: 2}
     - target: {fileID: 3978527576106926872, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
