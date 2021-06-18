@@ -28,7 +28,7 @@ public class BallMachineScript : MonoBehaviour
     private void OnBallPlaced(XRBaseInteractable interactable)
 	{
         // Enable the object
-        interactable.interactionLayerMask |= LayerMask.GetMask("interactables");
+        interactable.interactionLayerMask |= LayerMask.GetMask("interactable");
 
         // Disable the socket and delete the ball
         socket.socketActive = false;
