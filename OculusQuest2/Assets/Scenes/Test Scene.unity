@@ -8703,7 +8703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6835712229206163840, guid: b291a92c4b54b9e44b1663224b45d047, type: 3}
       propertyPath: m_Name
-      value: RussiaTrainTicket
+      value: JapanTrainTicket
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b291a92c4b54b9e44b1663224b45d047, type: 3}
@@ -9206,7 +9206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5575929452548254051, guid: 85bdd10b1dd358e45b69a5df36ace3d3, type: 3}
       propertyPath: m_Name
-      value: GreeceTrainTicket
+      value: RussiaTrainTicket
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85bdd10b1dd358e45b69a5df36ace3d3, type: 3}
