@@ -199,7 +199,7 @@ public class TransitionManager : MonoBehaviour
         while (t < fadeTime)
 		{
             //fadeImage.color = Color.Lerp(Color.clear, Color.black, t / fadeTime);
-            Unity.XR.Oculus.Utils.SetColorScaleAndOffset(Color.Lerp(Color.clear, Color.black, t / fadeTime), Vector4.zero);
+            //Unity.XR.Oculus.Utils.SetColorScaleAndOffset(Color.Lerp(Color.clear, Color.black, t / fadeTime), Vector4.zero);
 
             t += Time.deltaTime;
             yield return null;
@@ -214,7 +214,7 @@ public class TransitionManager : MonoBehaviour
         while (t < fadeTime)
         {
             //fadeImage.color = Color.Lerp(Color.black, Color.clear, t / fadeTime);
-            Unity.XR.Oculus.Utils.SetColorScaleAndOffset(Color.Lerp(Color.black, Color.clear, t / fadeTime), Vector4.zero);
+            //Unity.XR.Oculus.Utils.SetColorScaleAndOffset(Color.Lerp(Color.black, Color.clear, t / fadeTime), Vector4.zero);
 
             t += Time.deltaTime;
             yield return null;
