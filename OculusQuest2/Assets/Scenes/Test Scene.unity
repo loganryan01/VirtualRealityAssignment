@@ -3576,6 +3576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle Piece 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5767622763966809835, guid: 41c012980968e9a40b079246429c3c71, type: 3}
+      propertyPath: m_InteractionLayerMask.m_Bits
+      value: 16896
+      objectReference: {fileID: 0}
     - target: {fileID: 6278375244892974621, guid: 41c012980968e9a40b079246429c3c71, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -3927,23 +3931,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1866229459959079567, guid: 8ef159f4b766f4246a93c71a7d6bfd47, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -1.2705494e-21
       objectReference: {fileID: 0}
     - target: {fileID: 1866229459959079567, guid: 8ef159f4b766f4246a93c71a7d6bfd47, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.9413534
       objectReference: {fileID: 0}
     - target: {fileID: 1866229459959079567, guid: 8ef159f4b766f4246a93c71a7d6bfd47, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.33742237
       objectReference: {fileID: 0}
     - target: {fileID: 1866229459959079567, guid: 8ef159f4b766f4246a93c71a7d6bfd47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 140.56
       objectReference: {fileID: 0}
     - target: {fileID: 1866229459959079567, guid: 8ef159f4b766f4246a93c71a7d6bfd47, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -2.6754876e-14
       objectReference: {fileID: 0}
     - target: {fileID: 4124974403282972318, guid: 8ef159f4b766f4246a93c71a7d6bfd47, type: 3}
       propertyPath: m_Layer
@@ -8938,6 +8942,10 @@ PrefabInstance:
     - target: {fileID: 2051925005391327088, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051925005391327089, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
+      propertyPath: m_InteractionLayerMask.m_Bits
+      value: 1536
       objectReference: {fileID: 0}
     - target: {fileID: 2051925005391327092, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
       propertyPath: m_LocalPosition.x

@@ -116,6 +116,17 @@ public class ClockHandMovement : MonoBehaviour
         Vector3 torque = axis * (diff * correctionStrength - counterTorque);
         rb.AddTorque(torque * Time.fixedDeltaTime);
 
+        rb.MoveRotation(transform.rotation * Quaternion.Euler(torque));
+
+
+        //Vector3 ang = transform.rotation.eulerAngles;
+        //
+        //ang.y = 0;
+        //ang.z = 0;
+        //
+        //transform.rotation = Quaternion.Euler(ang);
+
+
 
         // ---------- Small Hand ----------
         float rotDiff = angle - lastRot;
