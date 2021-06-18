@@ -13,12 +13,14 @@ public class MainMenuScript : MonoBehaviour
         TransitionManager.instance.ChangeScene(2);
     }
 
+    // Go to the settings menu
     public void GoToSettingsMenu()
     {
         settingsCanvas.SetActive(true);
         gameObject.SetActive(false);
     }
 
+    // Quit the game
     public void QuitGame()
     {
         Application.Quit();

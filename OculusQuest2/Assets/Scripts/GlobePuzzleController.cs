@@ -28,7 +28,7 @@ public class GlobePuzzleController : MonoBehaviour
     private int correctAnswers = 0;
     
 
-
+    // Called when a button is pushed
     public void ButtonPressed(HandButton button)
 	{
         // Check if the button was correct
@@ -99,7 +99,7 @@ public class GlobePuzzleController : MonoBehaviour
         }
     }
 
-
+    // Open the globe if the player pushes the buttons in the correct order
     private IEnumerator OpenGlobe()
 	{
         Quaternion start = globeTop.rotation;

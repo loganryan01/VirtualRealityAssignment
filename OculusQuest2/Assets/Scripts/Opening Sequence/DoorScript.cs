@@ -10,7 +10,7 @@ public class DoorScript : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.layer == LayerMask.NameToLayer("Hand"))
+		if (other.gameObject.layer == LayerMask.NameToLayer("Default"))
 		{
 			audioClip.Play();
 			// Use transition manager to go to the main level
