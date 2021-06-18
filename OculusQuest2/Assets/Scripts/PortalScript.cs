@@ -15,15 +15,19 @@ public class PortalScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get the dissolve shader properties
         propBlock = new MaterialPropertyBlock();
         portalMidRenderer.GetPropertyBlock(propBlock);
 
+        // Set the Dissolve value to 1
         propBlock.SetFloat("_DisolveAmount", 1);
+        portalMidRenderer.SetPropertyBlock(propBlock);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Once the portal dissolve is completed, play the ongoing portal sound effect
         if (dissolveCompleted && !ongoingAudioSource.isPlaying)
         {
             ongoingAudioSource.Play();
@@ -32,6 +36,7 @@ public class PortalScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Once the player inserts the gem, activate the portal        
         if (other.gameObject.name == "PortalGem")
         {
             Destroy(other.gameObject);
@@ -39,12 +44,14 @@ public class PortalScript : MonoBehaviour
             activateAudioSource.Play();
         }
 
+        // Once the player touches the portal
         if (other.gameObject.layer == 12 && propBlock.GetFloat("_DisolveAmount") == 0)
         {
             TransitionManager.instance.ChangeScene(4);
         }
     }
 
+    // Increase the dissolve effect of the portal
     IEnumerator DissolvePortal()
     {
         float t = 0;
