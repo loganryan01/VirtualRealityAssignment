@@ -123,11 +123,12 @@ public class PuzzleBoxScript : MonoBehaviour
     private IEnumerator OpenBox()
 	{
         Quaternion startRot = boxLid.rotation;
+        Quaternion endRot = startRot * Quaternion.Euler(openAngle, 0, 0);
 
         float t = 0;
         while (t < openTime)
 		{
-            boxLid.rotation = startRot * Quaternion.Euler(openAngle * (t / openTime), 0, 0);
+            boxLid.rotation = Quaternion.Slerp(startRot, endRot, t / openTime);
 
             t += Time.deltaTime;
             yield return null;

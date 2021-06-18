@@ -95,12 +95,13 @@ public class KeyholeScript : MonoBehaviour
     private IEnumerator OpenCaseDoor()
 	{
         Quaternion startRot = caseDoor.rotation;
+        Quaternion endRot = startRot * Quaternion.Euler(0, angle, 0);
 
         float t = 0;
         while (t < time)
 		{
             // Rotate the case door over time
-            caseDoor.rotation = startRot * Quaternion.Euler(0, angle * (t / time), 0);
+            caseDoor.rotation = Quaternion.Slerp(startRot, endRot, t / time);
 
             t += Time.deltaTime;
             yield return null;

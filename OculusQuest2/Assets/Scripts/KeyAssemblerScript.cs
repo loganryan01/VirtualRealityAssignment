@@ -33,24 +33,36 @@ public class KeyAssemblerScript : MonoBehaviour
     // How many keys have been collected
     private int keyPieceCount = 0;
 
+    private List<GameObject> keyPieces = new List<GameObject>();
+
 
 
     void Start()
     {
         // Add event listeners
-        leftBlock.GetComponentInChildren<XRSocketInteractor>().onSelectEntered.AddListener(OnKeyPieceLocked);
-        rightBlock.GetComponentInChildren<XRSocketInteractor>().onSelectEntered.AddListener(OnKeyPieceLocked);
+        leftBlock.GetComponentInChildren<XRSocketInteractor>().onSelectEntered.AddListener((XRBaseInteractable inter) => OnKeyPieceLocked(inter, leftBlock.GetComponentInChildren<XRSocketInteractor>()));
+        rightBlock.GetComponentInChildren<XRSocketInteractor>().onSelectEntered.AddListener((XRBaseInteractable inter) => OnKeyPieceLocked(inter, rightBlock.GetComponentInChildren<XRSocketInteractor>()));
 
-        leftRotate = leftBlock.GetComponent<SnapRotate>();
-        rightRotate = rightBlock.GetComponent<SnapRotate>();
+        leftRotate = leftBlock.GetComponentInChildren<SnapRotate>();
+        rightRotate = rightBlock.GetComponentInChildren<SnapRotate>();
     }
 
 
     // Called when a key piece is placed in a slot
-    private void OnKeyPieceLocked( XRBaseInteractable interactable)
+    private void OnKeyPieceLocked(XRBaseInteractable interactable, XRSocketInteractor socket)
 	{
-        // Change layer mask from Interactable and Key Piece to only Key Piece to prevent the player from picking it back up, while letting the socket keep it
-        interactable.interactionLayerMask = LayerMask.GetMask("Key Piece");
+        // Add the object to the list of key pieces
+        keyPieces.Add(interactable.gameObject);
+
+        // Prevent it from being picked up again
+        interactable.interactionLayerMask = 0;
+        // Snap the object to the socket, making it a child
+        interactable.transform.position = socket.transform.position;
+        interactable.transform.rotation = socket.transform.rotation * Quaternion.Euler(90,0,0);
+        interactable.transform.parent = socket.transform;
+        // Set kinematic late
+        StartCoroutine(KeyPieceLockedLate(interactable));
+
 
         keyPieceCount++;
         // Check when both key pieces have been placed
@@ -59,34 +71,54 @@ public class KeyAssemblerScript : MonoBehaviour
             OnKeysPlaced();
         }
     }
+    private IEnumerator KeyPieceLockedLate(XRBaseInteractable interactable)
+    {
+        yield return null;
+        // Set interactable to kinematic after a frame so it gets dropped properly
+        interactable.GetComponent<Rigidbody>().isKinematic = true;
+    }
 
     // Called when both key pieces have been placed
     private void OnKeysPlaced()
 	{
+        // Get the rigidbodies
+        Rigidbody leftRB = leftBlock.GetComponent<Rigidbody>();
+        Rigidbody rightRB = rightBlock.GetComponent<Rigidbody>();
+
+        // Fix the rigidbodies data
+        leftRB.ResetCenterOfMass();
+        leftRB.ResetInertiaTensor();
+        rightRB.ResetCenterOfMass();
+        rightRB.ResetInertiaTensor();
+
         // Enable spinning for the blocks
-        leftBlock.GetComponent<Rigidbody>().isKinematic = false;
+        leftRB.isKinematic = false;
         leftRotate.enabled = true;
-        leftBlock.GetComponent<XRGrabInteractable>().interactionLayerMask = LayerMask.GetMask("Interactable");
-        rightBlock.GetComponent<Rigidbody>().isKinematic = false;
+        leftBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = LayerMask.GetMask("Interactable");
+        rightRB.isKinematic = false;
         rightRotate.enabled = true;
-        rightBlock.GetComponent<XRGrabInteractable>().interactionLayerMask = LayerMask.GetMask("Interactable");
+        rightBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = LayerMask.GetMask("Interactable");
     }
 
     // Called when the blocks have been rotated to the correct positions
     private IEnumerator OnBlocksRotated()
     {
+        // Get the rigidbodies
+        Rigidbody leftRB = leftBlock.GetComponent<Rigidbody>();
+        Rigidbody rightRB = rightBlock.GetComponent<Rigidbody>();
+
         // Disable spinning the blocks and lock rotation
         leftBlock.transform.rotation = Quaternion.Euler(leftBlockRotation, 0, 0);
-        leftBlock.GetComponent<Rigidbody>().isKinematic = true;
-        leftBlock.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        leftRB.isKinematic = true;
+        leftRB.constraints = RigidbodyConstraints.FreezeAll;
         leftRotate.enabled = false;
-        leftBlock.GetComponent<XRGrabInteractable>().interactionLayerMask = 0;
+        leftBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = 0;
 
         rightBlock.transform.rotation = Quaternion.Euler(rightBlockRotation, 0, 0);
-        rightBlock.GetComponent<Rigidbody>().isKinematic = true;
-        rightBlock.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        rightRB.isKinematic = true;
+        rightRB.constraints = RigidbodyConstraints.FreezeAll;
         rightRotate.enabled = false;
-        rightBlock.GetComponent<XRGrabInteractable>().interactionLayerMask = 0;
+        rightBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = 0;
 
 
         // Get the initial positions of the blocks
@@ -105,9 +137,12 @@ public class KeyAssemblerScript : MonoBehaviour
 		}
 
 
-        // Disable the key pieces. They cant be destroied because other scripts still have refrences to them
-        leftBlock.GetComponentInChildren<XRSocketInteractor>().selectTarget.gameObject.SetActive(false);
-        rightBlock.GetComponentInChildren<XRSocketInteractor>().selectTarget.gameObject.SetActive(false);
+        // Disable the key piece in the block
+        foreach (var obj in keyPieces)
+        {
+            obj.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+        }
+
         // Disable the socket interactors
         leftBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
         rightBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
