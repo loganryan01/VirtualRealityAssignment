@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 24ce90d6b28306b4a832c066fa1966c5
+guid: 6dbf53d7a586a9240b53f94760f20327
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PuzzleTexture
-    second: {fileID: 2100000, guid: 0aacb4079f0e37a4eb4932d864897900, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PuzzleTextureBack
-    second: {fileID: 2100000, guid: c13ca8690245a2c4490b92453b08a1d8, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: PuzzleTexture
     second: {fileID: 2100000, guid: 0aacb4079f0e37a4eb4932d864897900, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PuzzleTextureBack
+    second: {fileID: 2100000, guid: c13ca8690245a2c4490b92453b08a1d8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
