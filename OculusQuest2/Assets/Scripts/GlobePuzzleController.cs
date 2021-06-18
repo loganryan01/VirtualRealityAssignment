@@ -73,7 +73,7 @@ public class GlobePuzzleController : MonoBehaviour
                 // Enable interactables
                 foreach (var inter in interactables)
                 {
-                    inter.interactionLayerMask |= LayerMask.GetMask("interactables");
+                    inter.interactionLayerMask |= LayerMask.GetMask("Interactable");
                 }
 
                 onPuzzleComplete.Invoke();

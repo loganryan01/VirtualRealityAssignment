@@ -10,9 +10,11 @@ public class PhysicsBallScript : MonoBehaviour
 
     XRGrabInteractable interactable;
 
+    bool done = false;
 
 
-    void Start()
+
+    void Awake()
     {
         interactable = GetComponent<XRGrabInteractable>();
     }
@@ -41,6 +43,11 @@ public class PhysicsBallScript : MonoBehaviour
     // Called when entering the hole trigger
 	void OnTriggerEnter(Collider other)
 	{
+        if (done)
+        { return; }
+
+        done = true;
+
         // Use default layer
         gameObject.layer = 0;
         // Enable the grab interactable

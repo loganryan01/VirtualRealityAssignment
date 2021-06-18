@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class BallMachineScript : MonoBehaviour
 {
-    public XRGrabInteractable interactable;
+    public XRGrabInteractable puzzlePiece;
 
     public XRSocketInteractor socket;
 
@@ -28,7 +28,7 @@ public class BallMachineScript : MonoBehaviour
     private void OnBallPlaced(XRBaseInteractable interactable)
 	{
         // Enable the object
-        interactable.interactionLayerMask |= LayerMask.GetMask("Interactable");
+        puzzlePiece.interactionLayerMask |= LayerMask.GetMask("Interactable");
 
         // Disable the socket and delete the ball
         socket.socketActive = false;
