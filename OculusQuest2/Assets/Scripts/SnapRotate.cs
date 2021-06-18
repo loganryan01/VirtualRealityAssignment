@@ -33,6 +33,9 @@ public class SnapRotate : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = Vector3.zero;
+        rb.inertiaTensorRotation = Quaternion.identity;
+
         divisionSize = 360.0f / divisions;
 
         // Set direction vectors according to selected axis

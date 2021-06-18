@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1085934232718429270}
   - component: {fileID: 4117795483403315219}
   m_Layer: 0
-  m_Name: RussiaTrainTicket
+  m_Name: JapanTrainTicket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.020495458, y: 0.010670754, z: 0.00014156007}
+  m_Size: {x: 0.020495458, y: 0.010670754, z: 0.001}
   m_Center: {x: 0, y: -2.3283059e-10, z: 2.5465845e-11}
 --- !u!54 &1085934232718429270
 Rigidbody:

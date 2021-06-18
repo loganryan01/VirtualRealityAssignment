@@ -27,12 +27,32 @@ public class PuzzleBoxScript : MonoBehaviour
 
     void Start()
     {
+        puzzleSockets[0].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[0], 1));
+        puzzleSockets[0].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, 1));
+
+        puzzleSockets[1].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[1], 2));
+        puzzleSockets[1].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, 2));
+
+        puzzleSockets[2].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[2], 3));
+        puzzleSockets[2].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, 3));
+
+        puzzleSockets[3].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[3], 4));
+        puzzleSockets[3].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, 4));
+
+        puzzleSockets[4].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[4], 5));
+        puzzleSockets[4].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, 5));
+
+        puzzleSockets[5].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[5], 6));
+        puzzleSockets[5].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, 6));
+
+
+
         // Add listeners to puzzle piece sockets
-        for (int i = 0; i < puzzleSockets.Length; i++)
-		{
-            puzzleSockets[i].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[i], i + 1));
-            puzzleSockets[i].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, i + 1));
-		}
+        //for (int i = 0; i < puzzleSockets.Length; i++)
+        //{
+        //    puzzleSockets[i].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[i], i + 1));
+        //    puzzleSockets[i].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, i + 1));
+        //}
 
         // Add listener to gem socket
         gemSocket.onSelectEntered.AddListener(OnGemPlaced);
@@ -53,6 +73,7 @@ public class PuzzleBoxScript : MonoBehaviour
         // If the piece is correct, add it to the list
         if (interactable.name == "Puzzle Piece " + correctPuzzlePiece.ToString())
         {
+            Debug.Log("done");
             correctPuzzlePieces.Add(interactable);
         }
 

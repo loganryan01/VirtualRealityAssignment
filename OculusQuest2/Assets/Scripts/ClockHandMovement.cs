@@ -56,7 +56,7 @@ public class ClockHandMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = Vector3.zero;
-        rb.ResetInertiaTensor();
+        rb.inertiaTensorRotation = Quaternion.identity;
 
         lastRot = transform.eulerAngles.x;
 
@@ -115,17 +115,6 @@ public class ClockHandMovement : MonoBehaviour
         // Calculate and apply torque
         Vector3 torque = axis * (diff * correctionStrength - counterTorque);
         rb.AddTorque(torque * Time.fixedDeltaTime);
-
-        rb.MoveRotation(transform.rotation * Quaternion.Euler(torque));
-
-
-        //Vector3 ang = transform.rotation.eulerAngles;
-        //
-        //ang.y = 0;
-        //ang.z = 0;
-        //
-        //transform.rotation = Quaternion.Euler(ang);
-
 
 
         // ---------- Small Hand ----------
