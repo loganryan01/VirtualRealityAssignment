@@ -24,7 +24,7 @@ public class NonSnapGrabInteractable : XRGrabInteractable
 
     protected override void OnSelectExiting(XRBaseInteractor interactor)
     {
-        base.OnSelectEntering(interactor);
+        base.OnSelectExiting(interactor);
 
         if (interactor is XRDirectInteractor)
         {
