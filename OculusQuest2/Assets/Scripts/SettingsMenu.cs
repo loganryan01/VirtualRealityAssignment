@@ -100,11 +100,6 @@ public class SettingsMenu : MonoBehaviour
         continuousMoveProvider.enabled = false;
 
         PlayerPrefs.SetString("Controls", "Teleportation");
-
-        if (teleportationToggle.isOn)
-        {
-            Debug.Log(PlayerPrefs.GetString("Controls"));
-        }
     }
 
     public void EnableContinuous()
@@ -122,11 +117,6 @@ public class SettingsMenu : MonoBehaviour
         continuousMoveProvider.enabled = true;
 
         PlayerPrefs.SetString("Controls", "Continuous");
-
-        if (continuousToggle.isOn)
-        {
-            Debug.Log(PlayerPrefs.GetString("Controls"));
-        }
     }
 
     public void EnableSnapTurn()
