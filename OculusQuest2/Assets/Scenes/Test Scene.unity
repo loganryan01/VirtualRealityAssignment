@@ -3827,8 +3827,8 @@ MonoBehaviour:
   correctionStrength: 5
   counterTorqueStrength: 5
   smallHand: {fileID: 1028825722}
-  puzzleMinute: 105
-  puzzleHour: 128
+  puzzleMinute: 15
+  puzzleHour: 1
   puzzleTimmer: 3
   puzzleThreshold: 1
   onPuzzleComplete:
