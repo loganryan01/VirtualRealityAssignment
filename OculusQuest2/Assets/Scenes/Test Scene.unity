@@ -5154,7 +5154,7 @@ PrefabInstance:
     - target: {fileID: 1870882016030121844, guid: cccc5c066ac832c48be33df9599850da, type: 3}
       propertyPath: interactable
       value: 
-      objectReference: {fileID: 1903762221496977721}
+      objectReference: {fileID: 0}
     - target: {fileID: 1903762221496977673, guid: cccc5c066ac832c48be33df9599850da, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
