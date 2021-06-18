@@ -22,7 +22,7 @@ public class CabnetScript : MonoBehaviour
     {
         if (!hasBeenOpened)
         {
-            interactable.interactionLayerMask |= LayerMask.GetMask("interactables");
+            interactable.interactionLayerMask |= LayerMask.GetMask("Interactable");
 
             audioSource.Play();
             StartCoroutine(OpenDrawerReal());

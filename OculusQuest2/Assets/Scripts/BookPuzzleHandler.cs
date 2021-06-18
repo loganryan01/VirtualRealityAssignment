@@ -57,7 +57,7 @@ public class BookPuzzleHandler : MonoBehaviour
                 // Enable the objects
                 foreach (var inter in interactables)
                 {
-                    inter.interactionLayerMask |= LayerMask.GetMask("interactables");
+                    inter.interactionLayerMask |= LayerMask.GetMask("Interactable");
                 }
 
                 onPuzzleComplete.Invoke();

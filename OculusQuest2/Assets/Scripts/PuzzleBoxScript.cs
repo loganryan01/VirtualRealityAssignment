@@ -98,7 +98,7 @@ public class PuzzleBoxScript : MonoBehaviour
         // Enable the objects
         foreach (var inter in interactables)
         {
-            inter.interactionLayerMask |= LayerMask.GetMask("interactables");
+            inter.interactionLayerMask |= LayerMask.GetMask("Interactable");
         }
 
         // Disable all sockets
