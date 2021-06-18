@@ -30,8 +30,8 @@ public class PuzzleBoxScript : MonoBehaviour
         // Add listeners to puzzle piece sockets
         for (int i = 0; i < puzzleSockets.Length; i++)
 		{
-            puzzleSockets[i].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[i], i));
-            puzzleSockets[i].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, i));
+            puzzleSockets[i].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[i], i + 1));
+            puzzleSockets[i].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, i + 1));
 		}
 
         // Add listener to gem socket
