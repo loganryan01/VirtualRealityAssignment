@@ -5147,6 +5147,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724553988}
     m_Modifications:
+    - target: {fileID: 782143282093969405, guid: cccc5c066ac832c48be33df9599850da, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 782143282093969405, guid: cccc5c066ac832c48be33df9599850da, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1633377809104600384, guid: cccc5c066ac832c48be33df9599850da, type: 3}
       propertyPath: m_Name
       value: Cabinet
@@ -5162,6 +5170,10 @@ PrefabInstance:
     - target: {fileID: 1903762221496977673, guid: cccc5c066ac832c48be33df9599850da, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085673712460456225, guid: cccc5c066ac832c48be33df9599850da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2153069003946272762, guid: cccc5c066ac832c48be33df9599850da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5207,6 +5219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5394860877753868129, guid: cccc5c066ac832c48be33df9599850da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7277822160355245018, guid: cccc5c066ac832c48be33df9599850da, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -5214,6 +5230,14 @@ PrefabInstance:
     - target: {fileID: 7277822160355245018, guid: cccc5c066ac832c48be33df9599850da, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728869470300685489, guid: cccc5c066ac832c48be33df9599850da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967995627831005352, guid: cccc5c066ac832c48be33df9599850da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cccc5c066ac832c48be33df9599850da, type: 3}
@@ -5478,6 +5502,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2241629313627641852, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2241629313627641854, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
       propertyPath: interactables.Array.data[0]
       value: 
@@ -5510,6 +5538,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 8214841612067036093, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5adde36c7035e634ebe4559d80c7521c, type: 3}
 --- !u!1001 &3083829183654458558
@@ -5519,9 +5551,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724553988}
     m_Modifications:
+    - target: {fileID: 1968756059518154962, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2741178816215001342, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
       propertyPath: m_Name
       value: SM_Globeframe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083829183699162538, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3260974675938931268, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5566,6 +5606,10 @@ PrefabInstance:
     - target: {fileID: 3260974675938931268, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336208154358427856, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7566293089182091274, guid: 0f71cf17320a13f4eb6801277ef67e36, type: 3}
       propertyPath: interactables.Array.data[0]
@@ -5994,6 +6038,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4011858997782633023, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4011858998518544167, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
       propertyPath: gem
       value: 
@@ -6001,6 +6049,14 @@ PrefabInstance:
     - target: {fileID: 4282242997296621419, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
       propertyPath: m_Name
       value: SM_DisplayBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801822363416049111, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175225785542099948, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de282c1557261d4abe53ce8fb79708b, type: 3}
@@ -6037,6 +6093,14 @@ PrefabInstance:
       objectReference: {fileID: 8043580103658252330, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
     - target: {fileID: 1631414199, guid: 87c22c34ceeaad340ac153f0d1ea43d7, type: 3}
       propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534739691961074412, guid: 87c22c34ceeaad340ac153f0d1ea43d7, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534739691961074412, guid: 87c22c34ceeaad340ac153f0d1ea43d7, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3285941560306561275, guid: 87c22c34ceeaad340ac153f0d1ea43d7, type: 3}
