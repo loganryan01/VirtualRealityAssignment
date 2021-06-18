@@ -21,6 +21,7 @@ public class GlobePuzzleController : MonoBehaviour
     public float angle;
 
     public UnityEvent onPuzzleComplete;
+    public UnityEvent onPuzzleFail;
 
 
     private List<HandButton> pushedButtons = new List<HandButton>();

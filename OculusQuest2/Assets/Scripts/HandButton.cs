@@ -20,6 +20,8 @@ public class HandButton : MonoBehaviour
     public float popUpTime;
     public float pressedScale;
 
+    public AudioSource audioSource;
+
 
     private Vector3 initialScale;
     private Vector3 finalScale;
@@ -40,7 +42,8 @@ public class HandButton : MonoBehaviour
         if (!pressed && other.gameObject.layer == LayerMask.NameToLayer("Hand"))
         {
             pressed = true;
-            // Move the button down
+            // Play audio and move the button down
+            audioSource.Play();
             StartCoroutine(MoveButton(true));
         }
     }
