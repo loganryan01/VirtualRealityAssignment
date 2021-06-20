@@ -39,13 +39,13 @@ public class PortalScript : MonoBehaviour
         // Once the player inserts the gem, activate the portal        
         if (other.gameObject.name == "PortalGem")
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             StartCoroutine(DissolvePortal());
             activateAudioSource.Play();
         }
 
         // Once the player touches the portal
-        if (other.gameObject.layer == 12 && propBlock.GetFloat("_DisolveAmount") == 0)
+        if (other.gameObject.name == "Grab Trigger" && dissolveCompleted)
         {
             TransitionManager.instance.ChangeScene(4);
         }
@@ -55,22 +55,19 @@ public class PortalScript : MonoBehaviour
     IEnumerator DissolvePortal()
     {
         float t = 0;
-        float disolveTime = activateAudioSource.clip.length;
+        float disolveTime = 2;
 
         while (t < disolveTime)
         {
             // Update the disolve amount value
             propBlock.SetFloat("_DisolveAmount", 1 - (t / disolveTime));
 
-            if (propBlock.GetFloat("_DisolveAmount") == 0)
-            {
-                dissolveCompleted = true;
-            }
-
             portalMidRenderer.SetPropertyBlock(propBlock);
 
             t += Time.deltaTime;
             yield return null;
         }
+
+        dissolveCompleted = true;
     }
 }

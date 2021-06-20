@@ -27,6 +27,7 @@ public class PuzzleBoxScript : MonoBehaviour
 
     void Start()
     {
+        // Add listeners to puzzle piece sockets individualy to fix reference issues
         puzzleSockets[0].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[0], 1));
         puzzleSockets[0].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, 1));
 
@@ -45,14 +46,6 @@ public class PuzzleBoxScript : MonoBehaviour
         puzzleSockets[5].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[5], 6));
         puzzleSockets[5].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, 6));
 
-
-
-        // Add listeners to puzzle piece sockets
-        //for (int i = 0; i < puzzleSockets.Length; i++)
-        //{
-        //    puzzleSockets[i].onSelectEntered.AddListener((XRBaseInteractable interactable) => OnPuzzlePiecePlaced(interactable, puzzleSockets[i], i + 1));
-        //    puzzleSockets[i].onSelectExited.AddListener((XRBaseInteractable interactable) => OnPieceRemoved(interactable, i + 1));
-        //}
 
         // Add listener to gem socket
         gemSocket.onSelectEntered.AddListener(OnGemPlaced);
@@ -73,7 +66,6 @@ public class PuzzleBoxScript : MonoBehaviour
         // If the piece is correct, add it to the list
         if (interactable.name == "Puzzle Piece " + correctPuzzlePiece.ToString())
         {
-            Debug.Log("done");
             correctPuzzlePieces.Add(interactable);
         }
 
