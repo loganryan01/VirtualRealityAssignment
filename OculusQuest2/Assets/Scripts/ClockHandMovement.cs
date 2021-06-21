@@ -147,8 +147,10 @@ public class ClockHandMovement : MonoBehaviour
             timmer += Time.deltaTime;
             if (timmer >= puzzleTimmer)
             {
+                float minRot = Vector3.SignedAngle(zeroDirection, -bigHandForward, axis);
+
                 // Check if the input is the answer
-                if (puzzleMinute >= lastRot - puzzleThreshold && puzzleMinute <= lastRot + puzzleThreshold && 
+                if (puzzleMinute >= minRot - puzzleThreshold && puzzleMinute <= minRot + puzzleThreshold && 
                     puzzleHour >= smallHandRot - puzzleThreshold && puzzleHour <= smallHandRot + puzzleThreshold)
                 {
                     // Enable the objects

@@ -3771,7 +3771,7 @@ MonoBehaviour:
   correctionStrength: 10
   counterTorqueStrength: 4
   smallHand: {fileID: 1028825722}
-  puzzleMinute: 15
+  puzzleMinute: 0
   puzzleHour: 1
   puzzleTimmer: 3
   puzzleThreshold: 1
