@@ -7923,10 +7923,6 @@ PrefabInstance:
       propertyPath: m_AttachTransform
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3770681896928478751, guid: b571c229c985cd3459e44ac546adac3c, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b571c229c985cd3459e44ac546adac3c, type: 3}
 --- !u!4 &1534739691961074408 stripped

@@ -82,21 +82,25 @@ public class KeyAssemblerScript : MonoBehaviour
     private void OnKeysPlaced()
 	{
         // Get the rigidbodies
-        Rigidbody leftRB = leftBlock.GetComponent<Rigidbody>();
-        Rigidbody rightRB = rightBlock.GetComponent<Rigidbody>();
+        //Rigidbody leftRB = leftBlock.GetComponent<Rigidbody>();
+        //Rigidbody rightRB = rightBlock.GetComponent<Rigidbody>();
 
         // Enable spinning for the blocks
-        leftRB.isKinematic = false;
-        leftRotate.enabled = true;
-        leftBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = LayerMask.GetMask("Interactable");
-        rightRB.isKinematic = false;
-        rightRotate.enabled = true;
-        rightBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = LayerMask.GetMask("Interactable");
+        //leftRB.isKinematic = false;
+        //leftRotate.enabled = true;
+        //leftBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = LayerMask.GetMask("Interactable");
+        //rightRB.isKinematic = false;
+        //rightRotate.enabled = true;
+        //rightBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = LayerMask.GetMask("Interactable");
+
+        StartCoroutine(OnBlocksRotated());
     }
 
     // Called when the blocks have been rotated to the correct positions
     private IEnumerator OnBlocksRotated()
     {
+        yield return null;
+
         // Get the rigidbodies
         Rigidbody leftRB = leftBlock.GetComponent<Rigidbody>();
         Rigidbody rightRB = rightBlock.GetComponent<Rigidbody>();
@@ -106,12 +110,14 @@ public class KeyAssemblerScript : MonoBehaviour
         leftRB.isKinematic = true;
         leftRB.constraints = RigidbodyConstraints.FreezeAll;
         leftRotate.enabled = false;
+        leftBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = 0;
         leftBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
 
         rightBlock.transform.rotation = Quaternion.Euler(rightBlockRotation, 0, 0);
         rightRB.isKinematic = true;
         rightRB.constraints = RigidbodyConstraints.FreezeAll;
         rightRotate.enabled = false;
+        rightBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = 0;
         rightBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
 
 
@@ -153,22 +159,22 @@ public class KeyAssemblerScript : MonoBehaviour
     }
 
 
-    void Update()
-	{
-        // Both keys have been placed, so the blocks are rotatable
-		if (keyPieceCount == 2)
-		{
-            // Get the rotation of the blocks
-            float leftRot = leftRotate.GetRotation();
-            float rightRot = rightRotate.GetRotation();
-
-            // Check if the blocks are at the correct rotation
-            if (leftRot > leftBlockRotation - threshold && leftRot < leftBlockRotation + threshold &&
-                rightRot > rightBlockRotation - threshold && rightRot < rightBlockRotation + threshold)
-			{
-                keyPieceCount++;
-                StartCoroutine(OnBlocksRotated());
-            }
-		}
-	}
+    //void Update()
+	//{
+    //    // Both keys have been placed, so the blocks are rotatable
+	//	if (keyPieceCount == 2)
+	//	{
+    //        // Get the rotation of the blocks
+    //        float leftRot = leftRotate.GetRotation();
+    //        float rightRot = rightRotate.GetRotation();
+    //
+    //        // Check if the blocks are at the correct rotation
+    //        if (leftRot > leftBlockRotation - threshold && leftRot < leftBlockRotation + threshold &&
+    //            rightRot > rightBlockRotation - threshold && rightRot < rightBlockRotation + threshold)
+	//		{
+    //            keyPieceCount++;
+    //            StartCoroutine(OnBlocksRotated());
+    //        }
+	//	}
+	//}
 }

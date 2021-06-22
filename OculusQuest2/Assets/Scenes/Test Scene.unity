@@ -8656,29 +8656,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1083380683}
     m_Modifications:
-    - target: {fileID: 2051925005391327088, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2051925005391327088, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2051925005391327089, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
-      propertyPath: m_InteractionLayerMask.m_Bits
-      value: 1536
-      objectReference: {fileID: 0}
     - target: {fileID: 2051925005391327092, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.4016
+      value: 4.4012
       objectReference: {fileID: 0}
     - target: {fileID: 2051925005391327092, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.279
+      value: 1.2624
       objectReference: {fileID: 0}
     - target: {fileID: 2051925005391327092, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.46
+      value: 0.425
       objectReference: {fileID: 0}
     - target: {fileID: 2051925005391327092, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8715,14 +8703,6 @@ PrefabInstance:
     - target: {fileID: 2051925005391327102, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
       propertyPath: m_Name
       value: Key Piece 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2051925005747052363, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 8043580103658252330, guid: 42e4e98a4d711384286fa6fd8747fe78, type: 2}
-    - target: {fileID: 2051925005747052363, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbc0b48341eee0f40bc64f41c74ea9f8, type: 3}
