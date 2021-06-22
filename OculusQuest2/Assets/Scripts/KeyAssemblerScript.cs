@@ -85,12 +85,6 @@ public class KeyAssemblerScript : MonoBehaviour
         Rigidbody leftRB = leftBlock.GetComponent<Rigidbody>();
         Rigidbody rightRB = rightBlock.GetComponent<Rigidbody>();
 
-        // Fix the rigidbodies data
-        leftRB.ResetCenterOfMass();
-        leftRB.ResetInertiaTensor();
-        rightRB.ResetCenterOfMass();
-        rightRB.ResetInertiaTensor();
-
         // Enable spinning for the blocks
         leftRB.isKinematic = false;
         leftRotate.enabled = true;
@@ -112,13 +106,13 @@ public class KeyAssemblerScript : MonoBehaviour
         leftRB.isKinematic = true;
         leftRB.constraints = RigidbodyConstraints.FreezeAll;
         leftRotate.enabled = false;
-        leftBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = 0;
+        leftBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
 
         rightBlock.transform.rotation = Quaternion.Euler(rightBlockRotation, 0, 0);
         rightRB.isKinematic = true;
         rightRB.constraints = RigidbodyConstraints.FreezeAll;
         rightRotate.enabled = false;
-        rightBlock.GetComponentInChildren<XRGrabInteractable>().interactionLayerMask = 0;
+        rightBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
 
 
         // Get the initial positions of the blocks
@@ -142,10 +136,6 @@ public class KeyAssemblerScript : MonoBehaviour
         {
             obj.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         }
-
-        // Disable the socket interactors
-        leftBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
-        rightBlock.GetComponentInChildren<XRSocketInteractor>().socketActive = false;
 
         // Play particle effect
         effect.Play();

@@ -34,6 +34,7 @@ public class SnapRotate : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = Vector3.zero;
+        rb.ResetInertiaTensor();
         rb.inertiaTensorRotation = Quaternion.identity;
 
         divisionSize = 360.0f / divisions;
