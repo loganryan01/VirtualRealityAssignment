@@ -24,8 +24,9 @@ A VR escape room for the Oculus Quest 2.
 3. Go to File > Build Settings
 4. Drag in the following scenes from the Scenes folder in the order:
   - Main Menu
-  - My Game
-  - Victory Scene
+  - Opening Sequence
+  - Test Scene
+  - Ending
 
 ### Oculus Quest 2
 1. Setup the Android environment <br> [https://docs.unity3d.com/Manual/android-sdksetup.html](https://docs.unity3d.com/Manual/android-sdksetup.html)
