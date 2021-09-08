@@ -36,6 +36,7 @@ A VR escape room for the Oculus Quest 2.
 5. Once game is finished compiling, the game will load on your Oculus Quest 2
 
 ## Screenshots
+![Demo](/docs/TheDisappearingAct_GameShot.png "Demo")
 
 ## Credits
  - **Unity:** A 3D game engine, used to create this demo. <br> [https://www.unity.com](https://www.unity.com)
